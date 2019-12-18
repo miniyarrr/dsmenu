@@ -1,12 +1,12 @@
 <template>
     <div class="main">
-       <h1>vue`s working</h1>
+        <Header></Header>
     </div>
 
 </template>
 
 <script>
-
+import Header from './components/Header'
     export default {
         data: function () {
             return {
@@ -28,6 +28,7 @@
 
         },
         components:{
+            Header
         }
     }
 
