@@ -37,6 +37,7 @@ import Header from './components/Header'
 <style lang="scss">
 html{
     font-family:Roboto sans-serif;
+    font-size:10px;
 }
 
 
