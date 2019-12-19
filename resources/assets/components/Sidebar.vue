@@ -9,18 +9,47 @@
 
         </div>
         <div class="sidebar-view">
+            <ul>
+                <MenuItem v-for="menu_item in menu"
+                             :item="menu_item"
+                             :depth="1"
+                >
 
+                </MenuItem>
+            </ul>
         </div>
     </div>
 </template>
 
 <script>
+    import MenuItem from './MenuItem';
     export default {
         name: "Sidebar",
         data(){
             return{
-                menu_open:false
+                menu_open:false,
+                menu:[
+                    {
+                        name:'menu1',
+                        children:[
+                            {
+                                name:'menu2'
+                            },{
+                                name:'menu3'
+                            },{
+                                name:'menu4'
+                            },
+                        ]
+                    }
+                ]
             }
+        },
+
+
+
+
+        components:{
+            MenuItem
         }
     }
 </script>
