@@ -1,12 +1,14 @@
 <template>
     <div class="main">
         <Header></Header>
+        <Sidebar></Sidebar>
     </div>
 
 </template>
 
 <script>
-import Header from './components/Header'
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
     export default {
         data: function () {
             return {
@@ -28,7 +30,8 @@ import Header from './components/Header'
 
         },
         components:{
-            Header
+            Header,
+            Sidebar
         }
     }
 
