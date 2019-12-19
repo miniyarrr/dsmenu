@@ -1,5 +1,5 @@
 <template>
-    <div class="sidebar" :class="{'active':menu_open}">
+    <div class="sidebar" :class="{'active':!menu_open}">
         <div class="sidebar-top" @click="menu_open=!menu_open">
             <svg xmlns="http://www.w3.org/2000/svg" width="30.531" height="15.25" viewBox="0 0 30.531 15.25">
                 <path id="menu.svg" class="cls-1"
@@ -9,10 +9,10 @@
 
         </div>
         <div class="sidebar-view">
-            <ul>
+            <ul class="menu-main-ul">
                 <MenuItem v-for="menu_item in menu"
-                             :item="menu_item"
-                             :depth="1"
+                          :item="menu_item"
+                          :depth="1"
                 >
 
                 </MenuItem>
@@ -23,21 +23,22 @@
 
 <script>
     import MenuItem from './MenuItem';
+
     export default {
         name: "Sidebar",
-        data(){
-            return{
-                menu_open:false,
-                menu:[
+        data() {
+            return {
+                menu_open: false,
+                menu: [
                     {
-                        name:'menu1',
-                        children:[
+                        name: 'menu1',
+                        children: [
                             {
-                                name:'menu2'
-                            },{
-                                name:'menu3'
-                            },{
-                                name:'menu4'
+                                name: 'menu2'
+                            }, {
+                                name: 'menu3'
+                            }, {
+                                name: 'menu4'
                             },
                         ]
                     }
@@ -46,9 +47,7 @@
         },
 
 
-
-
-        components:{
+        components: {
             MenuItem
         }
     }
@@ -60,12 +59,14 @@
         height           : 100vh;
         margin-top       : -4rem;
         background-color : #515585;
-        transition: all ease-in-out .3s;
-        &.active{
+        transition       : all ease-in-out .3s;
+
+        &.active {
             width : 25rem;
-            .sidebar-top{
-                justify-content: flex-start;
-                padding-left : 2rem;
+
+            .sidebar-top {
+                justify-content : flex-start;
+                padding-left    : 2rem;
             }
         }
 
@@ -74,10 +75,17 @@
             display         : flex;
             justify-content : center;
             align-items     : center;
-            border-bottom : 1px solid #fff;
-            path{
-                fill: #fff;
+            border-bottom   : 1px solid #fff;
+
+            path {
+                fill   : #fff;
                 cursor : pointer;
+            }
+        }
+
+        .sidebar-view {
+            .menu-main-ul{
+                padding-left : 1rem;
             }
         }
     }

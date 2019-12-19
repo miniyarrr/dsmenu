@@ -1,6 +1,6 @@
 <template>
-    <li>
-        {{item.name}}
+    <li class="menu-item">
+        <h2>{{item.name}}</h2>
 
         <transition name="tree-transition"
                     @before-enter="beforeEnter"
@@ -9,12 +9,13 @@
                     @leave="leave"
                     @beforeLeave="beforeLeave"
         >
-            <ul v-if="item.children">
+
+            <ul  :style="{'padding-left':depth+'rem'}">
 
                 <MenuItem
                         v-for="child in item.children"
                         :item="child"
-                        :depth="child.depth+1"
+                        :depth="depth+1"
                 >
 
                 </MenuItem>
@@ -80,7 +81,9 @@
 
 
         },
-
+        mounted(){
+          console.log(this.item.name + this.depth);
+        },
         components: {
             MenuItem
         }
@@ -89,54 +92,12 @@
 
 <style lang="scss" scoped>
 
-
-    .tree-element-header {
-        display    : flex;
-        margin-top : -1px;
-
-
-        .left-part {
-            min-width : 50%;
-            display   : flex;
-
-            h2 {
-                font-size   : 2.5rem;
-                font-weight : 600;
-            }
-
-            .header-wrapper {
-                display      : flex;
-                width        : 100%;
-                height       : 100%;
-                border       : 1px solid #eee;
-                border-right : none;
-                align-items  : center;
-                padding-left : 2rem;
-
-            }
-
-            .add-question {
-                margin-left : 1rem;
-                cursor      : pointer;
-                transition  : transform .3s;
-
-                &:hover {
-                    transform : scale(1.1);
-                }
-
-                path {
-                    fill : red;
-                }
-            }
-
-            .collapse-item {
-                margin-left  : auto;
-                margin-right : 2rem;
-                padding      : 0 0.5rem;
-                cursor       : pointer;
-            }
+    .menu-item{
+        color : #fff;
+        h2{
+            font-size : 1.8rem;
         }
-
-
     }
+
+   
 </style>
