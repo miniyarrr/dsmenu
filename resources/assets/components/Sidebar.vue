@@ -32,13 +32,14 @@
                 menu: [
                     {
                         name: 'menu1',
+                        expanded:false,
                         children: [
                             {
-                                name: 'menu2'
+                                name: 'menu2',
                             }, {
-                                name: 'menu3'
+                                name: 'menu3',
                             }, {
-                                name: 'menu4'
+                                name: 'menu4',
                             },
                         ]
                     }
@@ -84,8 +85,9 @@
         }
 
         .sidebar-view {
-            .menu-main-ul{
+            .menu-main-ul {
                 padding-left : 1rem;
+                margin-top   : 1rem;
             }
         }
     }
