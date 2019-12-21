@@ -2,6 +2,7 @@
     <div class="header">
         <div class="container">
             <h1>DS menu</h1>
+            <router-link to="/config">weweewe</router-link>
         </div>
     </div>
 </template>

@@ -2,6 +2,7 @@
     <div class="main">
         <Header></Header>
         <Sidebar></Sidebar>
+        <router-view></router-view>
     </div>
 
 </template>
