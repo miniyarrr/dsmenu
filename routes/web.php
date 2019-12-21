@@ -24,13 +24,17 @@ Route::group(['middleware' => 'guest'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-
+    Route::post('/logout', function () {
+        \Illuminate\Support\Facades\Auth::logout();
+        return view('auth.login');
+    });
     Route::get('/', function () {
         return view('welcome');
     });
     Route::get('/{any}', function () {
         return view('welcome');
     });
+
 });
 
 

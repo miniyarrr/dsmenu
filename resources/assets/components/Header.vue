@@ -2,14 +2,25 @@
     <div class="header">
         <div class="container">
             <h1>DS menu</h1>
+            <h1 @click="logout">LOGOUT</h1>
             <router-link to="/config">weweewe</router-link>
         </div>
     </div>
 </template>
 
 <script>
+    import axios from 'axios'
     export default {
-        name: "Header"
+        name: "Header",
+        methods:{
+            logout(){
+                axios.post('/logout')
+                    .then(res=>{
+                        location.reload();
+                    })
+            }
+        }
+
     }
 </script>
 
