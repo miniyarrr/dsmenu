@@ -1,13 +1,13 @@
 import Vue from 'vue';
 import App from './App.vue'
 import VueRouter from 'vue-router';
-
+import Config from './components/Config'
 Vue.use(VueRouter);
 const routes = [
 
     {
         path: '/config',
-        component: () => import("./components/Config"),
+        component: Config,
         name: 'Config'
     },
 
@@ -24,4 +24,4 @@ const app = new Vue({
     render: h => h(App),
     router
 });
-global.app = app;
+// global.app = app;
