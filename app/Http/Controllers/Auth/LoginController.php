@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Consumer;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -35,5 +39,28 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function username()
+    {
+        return 'miniyar23@gmail.com';
+    }
+
+    public function showLoginForm()
+    {
+        return view('auth.login', compact('texts', 'texts'));
+    }
+
+    /* Miniyar login */
+    public function login(Request $request)
+    {
+        $username = $request->email;
+        $pass = $request->password;
+        if (Auth::attempt(['consumer_login' => $username, 'password' => $pass])) {
+            return redirect()->intended('home');
+        }
+        else{
+            return view('auth.login', compact('texts', 'texts'));
+        }
     }
 }
