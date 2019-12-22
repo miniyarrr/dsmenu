@@ -1,6 +1,6 @@
 <template>
     <div class="app">
-        <Header></Header>
+        <Header :header_bg_color="header_bg_color" :header_text_color="header_text_color"></Header>
         <div class="main">
             <Sidebar
                     :menu_bg_color="menu_bg_color"
@@ -12,6 +12,7 @@
                     @menuBG="menuBG"
                     @menuText="menuText"
                     @headerBG="headerBG"
+                    @headerText="headerText"
             ></router-view>
         </div>
     </div>
@@ -29,6 +30,7 @@
                 menu_bg_color: null,
                 menu_text_color: null,
                 header_bg_color: null,
+                header_text_color:null
             }
         },
         methods: {
@@ -40,6 +42,9 @@
             },
             headerBG(e) {
                 this.header_bg_color = e.color;
+            },
+            headerText(e) {
+                this.header_text_color = e.color;
             },
 
 
@@ -54,7 +59,12 @@
             })
                 .then(res => {
                     console.log(res.data);
-                })
+                });
+
+            this.menu_bg_color = 'blue';
+            this.menu_text_color = '#fff';
+            this.header_bg_color = 'green';
+            this.header_text_color = '#FFF'
         }
     }
 

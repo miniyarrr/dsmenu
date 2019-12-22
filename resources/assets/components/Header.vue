@@ -1,5 +1,5 @@
 <template>
-    <div class="header">
+    <div class="header" :style="{'background-color':header_bg_color, 'color':header_text_color }">
         <div class="container">
             <div class="header-left">
                 <h1>DS menu</h1>
@@ -19,6 +19,7 @@
 
     export default {
         name: "Header",
+        props:['header_bg_color','header_text_color'],
         methods: {
             logout() {
                 axios.post('/logout')
@@ -47,7 +48,7 @@
         }
 
         h1 {
-            color  : #fff;
+            color : inherit;
             margin : 0;
         }
 
@@ -63,7 +64,7 @@
             width           : 50%;
 
             a {
-                color           : #fff;
+                color           : inherit;
                 font-size       : 1.5rem;
                 text-decoration : none;
                 margin-right    : 2rem;

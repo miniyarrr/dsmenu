@@ -5,7 +5,7 @@
             <h2 :style="{'color':menu_text_color}">{{item.name}}</h2>
             <svg v-if="item.children" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                  enable-background="new 0 0 24 24" id="Layer_1" version="1.0" viewBox="0 0 24 24" xml:space="preserve">
-                <polyline points="21,8.5 12,17.5 3,8.5 " fill="none" stroke="#fff" stroke-miterlimit="10"
+                <polyline :style="{'stroke':menu_text_color}" points="21,8.5 12,17.5 3,8.5 " fill="none" stroke="#fff" stroke-miterlimit="10"
                           stroke-width="2"/>
             </svg>
         </div>

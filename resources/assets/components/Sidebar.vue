@@ -2,7 +2,8 @@
     <div class="sidebar" :class="{'active':!menu_open}" :style="{'background-color':menu_bg_color}">
         <div class="sidebar-top" @click="menu_open=!menu_open">
             <svg xmlns="http://www.w3.org/2000/svg" width="30.531" height="15.25" viewBox="0 0 30.531 15.25">
-                <path id="menu.svg" class="cls-1"
+                <path :style="{'fill':menu_text_color}"
+                        id="menu.svg" class="cls-1"
                       d="M373.3,35.374h28.623a0.954,0.954,0,1,0,0-1.907H373.3A0.954,0.954,0,1,0,373.3,35.374Zm28.623,4.769H373.3a0.954,0.954,0,1,0,0,1.907h28.623A0.954,0.954,0,1,0,401.924,40.143Zm0,6.676H382.842a0.954,0.954,0,1,0,0,1.907h19.082A0.954,0.954,0,1,0,401.924,46.819Z"
                       transform="translate(-372.344 -33.469)"/>
             </svg>

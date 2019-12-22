@@ -16,6 +16,11 @@
                 <Chrome v-model="header_bg_color" @input="headerBG"></Chrome>
 
             </div>
+            <div class="input-row">
+                <h4>Цвет текста шапки</h4>
+                <Chrome v-model="header_text_color" @input="headerText"></Chrome>
+
+            </div>
 
         </div>
 
@@ -32,23 +37,24 @@
                 menu_bg_color: '#fff',
                 menu_text_color: '#fff',
                 header_bg_color: '#fff',
+                header_text_color:'fff',
             }
         },
 
         methods: {
             menuBG(e) {
                 this.$emit('menuBG', {color: e.hex});
-                this.menu_bg_color = e.hex;
             },
             menuText(e) {
                 this.$emit('menuText', {color: e.hex});
-                this.menu_text_color = e.hex;
             },
             headerBG(e) {
                 this.$emit('headerBG', {color: e.hex});
-                this.header_bg_color = e.hex;
-
             },
+            headerText(e){
+                this.$emit('headerText', {color: e.hex});
+            }
+
 
         },
         components: {
@@ -66,8 +72,11 @@
         .configs {
             display : flex;
 
-            .vc-chrome {
-                width : 18rem;
+            .input-row {
+                margin : 0rem 1rem;
+                .vc-chrome {
+                    width : 18rem;
+                }
             }
         }
     }
