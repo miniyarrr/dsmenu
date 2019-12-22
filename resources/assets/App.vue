@@ -2,9 +2,16 @@
     <div class="app">
         <Header></Header>
         <div class="main">
-            <Sidebar :menu_bg_color="menu_bg_color"></Sidebar>
+            <Sidebar
+                    :menu_bg_color="menu_bg_color"
+                    :menu_text_color="menu_text_color"
+            >
+
+            </Sidebar>
             <router-view
                     @menuBG="menuBG"
+                    @menuText="menuText"
+                    @headerBG="headerBG"
             ></router-view>
         </div>
     </div>
@@ -19,13 +26,22 @@
     export default {
         data: function () {
             return {
-                menu_bg_color: '#515585'
+                menu_bg_color: null,
+                menu_text_color: null,
+                header_bg_color: null,
             }
         },
         methods: {
             menuBG(e) {
                 this.menu_bg_color = e.color;
-            }
+            },
+            menuText(e) {
+                this.menu_text_color = e.color;
+            },
+            headerBG(e) {
+                this.header_bg_color = e.color;
+            },
+
 
         },
         components: {
@@ -33,8 +49,8 @@
             Sidebar
         },
         mounted() {
-            axios.post('/menu',{
-                interface_id:1
+            axios.post('/menu', {
+                interface_id: 1
             })
                 .then(res => {
                     console.log(res.data);

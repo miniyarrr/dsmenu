@@ -2,7 +2,7 @@
     <li class="menu-item">
 
         <div class="menu-item-header" @click="item.expanded = !item.expanded">
-            <h2>{{item.name}}</h2>
+            <h2 :style="{'color':menu_text_color}">{{item.name}}</h2>
             <svg v-if="item.children" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                  enable-background="new 0 0 24 24" id="Layer_1" version="1.0" viewBox="0 0 24 24" xml:space="preserve">
                 <polyline points="21,8.5 12,17.5 3,8.5 " fill="none" stroke="#fff" stroke-miterlimit="10"
@@ -23,6 +23,7 @@
                         v-for="child in item.children"
                         :item="child"
                         :depth="depth+1"
+                        :menu_text_color="menu_text_color"
                 >
 
                 </MenuItem>
@@ -49,6 +50,9 @@
             depth: {
                 type: Number
             },
+            menu_text_color:{
+                type:String
+            }
 
         },
         methods: {

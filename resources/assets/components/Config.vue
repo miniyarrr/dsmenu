@@ -3,32 +3,53 @@
         <h1>Страница настроек</h1>
         <div class="configs">
             <div class="input-row">
-                <Chrome v-model="colors" @input="menuBG"></Chrome>
+                <h4>Цвет меню</h4>
+                <Chrome v-model="menu_bg_color" @input="menuBG"></Chrome>
 
             </div>
+            <div class="input-row">
+                <h4>Цвет текста меню</h4>
+                <Chrome v-model="menu_text_color" @input="menuText"></Chrome>
+            </div>
+            <div class="input-row">
+                <h4>Цвет шапки</h4>
+                <Chrome v-model="header_bg_color" @input="headerBG"></Chrome>
+
+            </div>
+
         </div>
 
     </div>
 </template>
 
 <script>
-    import { Chrome } from 'vue-color'
-
-
+    import {Chrome} from 'vue-color'
 
     export default {
         name: "Config",
         data() {
             return {
-                menu_bg_color: null,
-                colors:'#194d33',
+                menu_bg_color: '#fff',
+                menu_text_color: '#fff',
+                header_bg_color: '#fff',
             }
         },
+
         methods: {
             menuBG(e) {
-                this.$emit('menuBG', {color: e.hex})
-                console.log('emit')
-            }
+                this.$emit('menuBG', {color: e.hex});
+                this.menu_bg_color = e.hex;
+            },
+            menuText(e) {
+                this.$emit('menuText', {color: e.hex});
+                this.menu_text_color = e.hex;
+            },
+            headerBG(e) {
+                this.$emit('headerBG', {color: e.hex});
+                this.header_bg_color = e.hex;
+
+            },
+
         },
         components: {
             Chrome
@@ -39,11 +60,13 @@
 
 <style scoped lang="scss">
     .config {
-        display : flex;
+        display        : flex;
         flex-direction : column;
-        .configs{
+
+        .configs {
             display : flex;
-            .vc-chrome{
+
+            .vc-chrome {
                 width : 18rem;
             }
         }

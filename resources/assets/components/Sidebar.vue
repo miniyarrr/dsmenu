@@ -13,6 +13,7 @@
                 <MenuItem v-for="menu_item in menu"
                           :item="menu_item"
                           :depth="1"
+                          :menu_text_color="menu_text_color"
                 >
 
                 </MenuItem>
@@ -92,7 +93,7 @@
                 ]
             }
         },
-        props:['menu_bg_color'],
+        props:['menu_bg_color', 'menu_text_color'],
 
 
         components: {
