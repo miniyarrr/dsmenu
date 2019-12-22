@@ -33,37 +33,17 @@ class MenuController extends Controller
         $menu = array();
         $lang = config('app.locale');
 
-        if ($request->object == 'mainmenu' && $request->module == 'main') {
-            $params = [
-//                "menutype" => $request->menutype,
-                "check_access" => true,
-                "convert_to_list" => false,
-                "interface_id" => $request->interface_id ?? null,
-            ];
+        $params = [
+            "check_access" => true,
+            "convert_to_list" => false,
+            "interface_id" => $request->interface_id ?? null,
+        ];
 
-            $menu = (new MenuManager())->buildMenu($params);
+        $menu = (new MenuManager())->buildMenu($params);
 
-            dd ($menu);
 
-            return response()->json($menu, (empty($menu)) ? 403 : 200);
+        return response()->json($menu, (empty($menu)) ? 403 : 200);
 
-        } elseif ($request->object == 'footer' && $request->module == 'main') {
-            $footer = $this->buildFooter();
-            return response()->json($footer);
-        } elseif ($request->object == 'profilemenu' && $request->module == 'main') {
-            $userProfileMenu = $this->buildUserProfileMenu();
-            return response()->json($userProfileMenu);
-        }
-        elseif ($request->object == 'buildError' && $request->module == 'main') {
-            $errors = $this->buildError();
-            return response()->json($errors);
-        }
-        elseif ($request->object == 'translateList' && $request->module == 'main') {
-            $listTranslation = $this->translateList();
-            return response()->json($listTranslation);
-        }
-
-//        dd(Auth::user());
     }
 
     public function buildUserProfileMenu()

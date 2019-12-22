@@ -57,7 +57,7 @@ class LoginController extends Controller
         $username = $request->email;
         $pass = $request->password;
         if (Auth::attempt(['consumer_login' => $username, 'password' => $pass])) {
-            return redirect()->intended('home');
+            return view('welcome');
         }
         else{
             return view('auth.login', compact('texts', 'texts'));

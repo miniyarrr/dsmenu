@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class UInterface extends Model
 {
-    protected $table = "__Interfaces";
+    protected $table = "__UserInterfaces";
 
     protected $primaryKey = "id";
 
