@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
+use function Sodium\add;
 
 class MenuManager
 {
@@ -311,7 +312,7 @@ class MenuManager
         return $menu_item_view_l;
     }
 
-    private function convertMenuToList($menu)
+    private function convertMenuToList($menu, $separator = '  ')
     {
         $list_menu = [];
         $items = $menu;
@@ -320,13 +321,13 @@ class MenuManager
             $cur_item = [];
             foreach ($item as $field_name => $field_value) {
                 if ($field_name == 'title')
-                    $cur_item = array_add($cur_item, $field_name, self::$marker . $field_value);
+                    $cur_item = Arr::add($cur_item, $field_name, $separator . self::$marker . $field_value);
                 else
-                    $cur_item = array_add($cur_item, $field_name, $field_value);
+                    $cur_item = Arr::add($cur_item, $field_name, $field_value);
             }
             array_push($list_menu, $cur_item);
             if (isset($item['children'])){
-                $children_list = $this->convertMenuToList($item['children']);
+                $children_list = $this->convertMenuToList($item['children'], $separator . '  ');
                 $list_menu = array_merge($list_menu, $children_list);
             }
         }
