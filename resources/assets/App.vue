@@ -2,7 +2,7 @@
     <div class="app">
         <Header></Header>
         <div class="main">
-            <Sidebar :menu_bg_color="menu_bg_color" ></Sidebar>
+            <Sidebar :menu_bg_color="menu_bg_color"></Sidebar>
             <router-view
                     @menuBG="menuBG"
             ></router-view>
@@ -14,6 +14,7 @@
 <script>
     import Header from './components/Header';
     import Sidebar from './components/Sidebar';
+    import axios from 'axios'
 
     export default {
         data: function () {
@@ -30,6 +31,12 @@
         components: {
             Header,
             Sidebar
+        },
+        mounted() {
+            axios.post('/menu')
+                .then(res => {
+                    console.log(res.data);
+                })
         }
     }
 
