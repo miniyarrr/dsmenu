@@ -50,7 +50,6 @@ class MenuManager
         else{
             self::$fields_list = [
                 'title',
-                'image',
                 'depth',
                 'link',
                 'group_l',
@@ -71,7 +70,7 @@ class MenuManager
         if (self::$check_access) {
             $userInterface = UInterface::where('id', $interface_id)->first();
             self::$accessRolesId = ConsumerAccessRole::leftJoin('_AccessRoles as ar', 'ar.id', '=', 'access_role_id')
-                ->where('ar.user_interface_id', $interface_id)->where('consumer_id', Auth::user()->id)->select('ar.*')->get()->toArray();
+                ->where('ar.interface_id', $interface_id)->where('consumer_id', Auth::user()->id)->select('ar.*')->get()->toArray();
         }
         else{
             self::$accessRolesId = null;
@@ -162,11 +161,11 @@ class MenuManager
             switch ($test) {
                 case($test == 'id'):
                     $id = $menuItem['id'];
-                    $item = array_add($item, "id", $id);
+                    $item = Arr::add($item, "id", $id);
                     break;
                 case($test == 'menu_item_code'):
                     $menu_item_code = $menuItem['menu_item_code'];
-                    $item = array_add($item, "menu_item_code", $menu_item_code);
+                    $item = Arr::add($item, "menu_item_code", $menu_item_code);
                     break;
                 case($test == 'access_allowed_role_name'):
                     $access_allowed_role_name = '';
@@ -175,7 +174,7 @@ class MenuManager
                             $access_allowed_role_name = $access_allowed_role_name . $access_role['access_role']['access_role_name'] . ', ';
                     }
                     $access_allowed_role_name   = Str::replaceLast(', ', '', $access_allowed_role_name);
-                    $item = array_add($item, "access_allowed_role_name", $access_allowed_role_name);
+                    $item = Arr::add($item, "access_allowed_role_name", $access_allowed_role_name);
                     break;
                 case($test == 'access_denied_role_name'):
                     $access_denied_role_name  = '';
@@ -184,7 +183,7 @@ class MenuManager
                             $access_denied_role_name  = $access_denied_role_name  . $access_role['access_role_name'] . ', ';
                     }
                     $access_denied_role_name    = Str::replaceLast(', ', '', $access_denied_role_name );
-                    $item = array_add($item, "access_denied_role_name",  $access_denied_role_name );
+                    $item = Arr::add($item, "access_denied_role_name",  $access_denied_role_name );
                     break;
                 case($test == 'image'):
                     $image = '';
@@ -197,49 +196,50 @@ class MenuManager
                     } else {
                         $image = $menuItem['image']['image_path'];
                     }
-                    $item = array_add($item, "img", $image);
+                    $item = Arr::add($item, "img", $image);
                     break;
                 case($test == 'depth'):
-                    $item = array_add($item, "depth", $depth);
+                    $item = Arr::add($item, "depth", $depth);
                     break;
                 case($test == 'padding'):
-                    $item = array_add($item, "padding", ($depth - 1) * self::$indent);
+                    $item = Arr::add($item, "padding", ($depth - 1) * self::$indent);
                     break;
                 case($test == 'link'):
                     $link = '';
-                    if ($menuItem['group_l'] == 0 && $menuItem['fe_route'] != NULL) {
-                        foreach ($menuItem['fe_route']['fe_route_url'] as $fe_route_url) {
-                            //commit Albert Topalu 18.04.19 14:44
-//                    if ($fe_route_url['use_card_l'] === 0 && $fe_route_url['fe_url'] != NULL) {
-                            //END commit Albert Topalu 18.04.19 14:44
-
-                            //Edit Albert Topalu 18.04.19 14:44  $fe_route_url['use_card_l'] === ->  $fe_route_url['use_card_l'] ==
-                            if ($fe_route_url['use_card_l'] == 0 && $fe_route_url['fe_url'] != NULL) {
-                                $link = '/' . $fe_route_url['fe_url']['fe_url_code'];
-                            }
-                            //END Edit Albert Topalu 18.04.19 14:44
-                        }
-                    }
-                    $item = array_add($item, "link", $link);
+//                    if ($menuItem['group_l'] == 0 && $menuItem['fe_route'] != NULL) {
+//                        foreach ($menuItem['fe_route']['fe_route_url'] as $fe_route_url) {
+//                            //commit Albert Topalu 18.04.19 14:44
+////                    if ($fe_route_url['use_card_l'] === 0 && $fe_route_url['fe_url'] != NULL) {
+//                            //END commit Albert Topalu 18.04.19 14:44
+//
+//                            //Edit Albert Topalu 18.04.19 14:44  $fe_route_url['use_card_l'] === ->  $fe_route_url['use_card_l'] ==
+//                            if ($fe_route_url['use_card_l'] == 0 && $fe_route_url['fe_url'] != NULL) {
+//                                $link = '/' . $fe_route_url['fe_url']['fe_url_code'];
+//                            }
+//                            //END Edit Albert Topalu 18.04.19 14:44
+//                        }
+//                    }
+                    $item = Arr::add($item, "link", $link);
                     break;
                 case($test == 'separator'):
-                    $item = array_add($item, "separator", '10');
+                    $item = Arr::add($item, "separator", '10');
                     break;
                 case($test == 'group_l'):
                     if ($menuItem['group_l'] == 0) {
-                        $item = array_add($item, 'group_l', '0');
+                        $item = Arr::add($item, 'group_l', '0');
                     } else {
-                        $item = array_add($item, 'group_l', '1');
+                        $item = Arr::add($item, 'group_l', '1');
                     }
                     break;
                 case($test == 'line_n'):
-                    $item = array_add($item, 'line_n', (string) $menuItem['line_n']);
+                    $item = Arr::add($item, 'line_n', (string) $menuItem['line_n']);
                     break;
             }
         }
 
         //+Устанавливаем значение title
         $title = $menuItem['menu_item_name'];
+        $item = Arr::add($item, 'title', $title);
         //-Устанавливаем значение title
 
         //+Устанавливаем значение children
@@ -265,7 +265,7 @@ class MenuManager
         }
 
         if (!empty($children)) {
-            $item = array_add($item, "children", $children);
+            $item = Arr::add($item, "children", $children);
         }
         //-Устанавливаем значение children
 
