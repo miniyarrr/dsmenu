@@ -29,7 +29,6 @@ class MenuController extends Controller
     public function index(Request $request)
     {
 
-        dd(Auth::user());
         $this->consumer = Auth::user();
         $menu = array();
         $lang = config('app.locale');
@@ -61,6 +60,8 @@ class MenuController extends Controller
             $listTranslation = $this->translateList();
             return response()->json($listTranslation);
         }
+
+        dd(Auth::user());
     }
 
     public function buildUserProfileMenu()
