@@ -1878,6 +1878,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -1904,6 +1909,29 @@ __webpack_require__.r(__webpack_exports__);
     },
     headerText: function headerText(e) {
       this.header_text_color = e.color;
+    },
+    interfaceChanged: function interfaceChanged(e) {
+      var menu;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function interfaceChanged$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('/menu', {
+                interface_id: e.interface_id
+              }));
+
+            case 2:
+              menu = _context.sent;
+              console.log(menu.data);
+              this.menu = menu.data.items;
+
+            case 5:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, null, this);
     }
   },
   components: {
@@ -1912,23 +1940,23 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     var interfaces, menu;
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function mounted$(_context) {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function mounted$(_context2) {
       while (1) {
-        switch (_context.prev = _context.next) {
+        switch (_context2.prev = _context2.next) {
           case 0:
-            _context.next = 2;
+            _context2.next = 2;
             return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('/interface'));
 
           case 2:
-            interfaces = _context.sent;
+            interfaces = _context2.sent;
             this.interfaces = interfaces.data;
-            _context.next = 6;
+            _context2.next = 6;
             return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('/menu', {
               interface_id: this.interfaces[0]['id']
             }));
 
           case 6:
-            menu = _context.sent;
+            menu = _context2.sent;
             console.log(menu.data);
             this.menu = menu.data.items;
             this.menu_bg_color = 'blue';
@@ -1938,7 +1966,7 @@ __webpack_require__.r(__webpack_exports__);
 
           case 13:
           case "end":
-            return _context.stop();
+            return _context2.stop();
         }
       }
     }, null, this);
@@ -2054,16 +2082,35 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      current_interface: null
+    };
+  },
   name: "Header",
-  props: ['header_bg_color', 'header_text_color'],
+  props: ['header_bg_color', 'header_text_color', 'interfaces'],
   methods: {
     logout: function logout() {
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/logout').then(function (res) {
         location.reload();
       });
+    },
+    interfaceChanged: function interfaceChanged(e) {
+      this.$emit('interfaceChanged', {
+        interface_id: e.target.value
+      });
     }
+  },
+  mounted: function mounted() {
+    this.current_interface = this.interfaces[0]['id'];
   }
 });
 
@@ -2341,7 +2388,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".header[data-v-6f8a90f2] {\n  width: 100%;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-align: center;\n          align-items: center;\n  height: 4rem;\n  background-color: #151965;\n  box-shadow: 0px 11px 18px 0px rgba(21, 25, 101, 0.59);\n}\n.header .container[data-v-6f8a90f2] {\n  display: -webkit-box;\n  display: flex;\n  max-height: 100%;\n  -webkit-box-pack: justify;\n          justify-content: space-between;\n}\n.header h1[data-v-6f8a90f2] {\n  color: inherit;\n  margin: 0;\n}\n.header .header-left[data-v-6f8a90f2] {\n  display: -webkit-box;\n  display: flex;\n  width: 50%;\n}\n.header .header-right[data-v-6f8a90f2] {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: end;\n          justify-content: flex-end;\n  width: 50%;\n}\n.header .header-right a[data-v-6f8a90f2] {\n  color: inherit;\n  font-size: 1.5rem;\n  text-decoration: none;\n  margin-right: 2rem;\n  cursor: pointer;\n}\n.header .header-right a[data-v-6f8a90f2]:hover {\n  text-decoration: underline;\n}", ""]);
+exports.push([module.i, ".header[data-v-6f8a90f2] {\n  width: 100%;\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-align: center;\n          align-items: center;\n  height: 4rem;\n  background-color: #151965;\n  box-shadow: 0px 11px 18px 0px rgba(21, 25, 101, 0.59);\n}\n.header .container[data-v-6f8a90f2] {\n  display: -webkit-box;\n  display: flex;\n  max-height: 100%;\n  -webkit-box-pack: justify;\n          justify-content: space-between;\n}\n.header h1[data-v-6f8a90f2] {\n  color: inherit;\n  margin: 0;\n}\n.header .header-left[data-v-6f8a90f2] {\n  display: -webkit-box;\n  display: flex;\n  width: 50%;\n}\n.header .header-left select[data-v-6f8a90f2] {\n  color: #000;\n}\n.header .header-right[data-v-6f8a90f2] {\n  display: -webkit-box;\n  display: flex;\n  -webkit-box-pack: end;\n          justify-content: flex-end;\n  width: 50%;\n}\n.header .header-right a[data-v-6f8a90f2] {\n  color: inherit;\n  font-size: 1.5rem;\n  text-decoration: none;\n  margin-right: 2rem;\n  cursor: pointer;\n}\n.header .header-right a[data-v-6f8a90f2]:hover {\n  text-decoration: underline;\n}", ""]);
 
 // exports
 
@@ -7154,43 +7201,47 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "app" },
-    [
-      _c("Header", {
-        attrs: {
-          header_bg_color: _vm.header_bg_color,
-          header_text_color: _vm.header_text_color
-        }
-      }),
-      _vm._v(" "),
-      _c(
+  return _vm.interfaces
+    ? _c(
         "div",
-        { staticClass: "main" },
+        { staticClass: "app" },
         [
-          _c("Sidebar", {
+          _c("Header", {
             attrs: {
-              menu: _vm.menu,
-              menu_bg_color: _vm.menu_bg_color,
-              menu_text_color: _vm.menu_text_color
-            }
+              header_bg_color: _vm.header_bg_color,
+              header_text_color: _vm.header_text_color,
+              interfaces: _vm.interfaces
+            },
+            on: { interfaceChanged: _vm.interfaceChanged }
           }),
           _vm._v(" "),
-          _c("router-view", {
-            on: {
-              menuBG: _vm.menuBG,
-              menuText: _vm.menuText,
-              headerBG: _vm.headerBG,
-              headerText: _vm.headerText
-            }
-          })
+          _c(
+            "div",
+            { staticClass: "main" },
+            [
+              _c("Sidebar", {
+                attrs: {
+                  menu: _vm.menu,
+                  menu_bg_color: _vm.menu_bg_color,
+                  menu_text_color: _vm.menu_text_color
+                }
+              }),
+              _vm._v(" "),
+              _c("router-view", {
+                on: {
+                  menuBG: _vm.menuBG,
+                  menuText: _vm.menuText,
+                  headerBG: _vm.headerBG,
+                  headerText: _vm.headerText
+                }
+              })
+            ],
+            1
+          )
         ],
         1
       )
-    ],
-    1
-  )
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -7333,7 +7384,51 @@ var render = function() {
     },
     [
       _c("div", { staticClass: "container" }, [
-        _vm._m(0),
+        _c("div", { staticClass: "header-left" }, [
+          _c("h1", [_vm._v("DS menu")]),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.current_interface,
+                  expression: "current_interface"
+                }
+              ],
+              on: {
+                change: [
+                  function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.current_interface = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  },
+                  _vm.interfaceChanged
+                ]
+              }
+            },
+            _vm._l(_vm.interfaces, function(interf) {
+              return _c("option", { domProps: { value: interf.id } }, [
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(interf.name) +
+                    "\n\n                "
+                )
+              ])
+            }),
+            0
+          )
+        ]),
         _vm._v(" "),
         _c("div", { staticClass: "header-right" }, [
           _c(
@@ -7353,16 +7448,7 @@ var render = function() {
     ]
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "header-left" }, [
-      _c("h1", [_vm._v("DS menu")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
