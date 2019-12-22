@@ -46,6 +46,13 @@ class MenuController extends Controller
 
     }
 
+    public function getInterfaces(Request $request){
+        $this->consumer = Auth::user();
+        $consumer_interfaces = [$this->consumer->getUserInterfaces()];
+
+        return $consumer_interfaces;
+    }
+
     public function buildUserProfileMenu()
     {
 

@@ -31,6 +31,7 @@ Route::group(['middleware' => 'auth'], function () {
     });
 
     Route::any('/menu', '\App\Http\Controllers\MenuController@index')->name('admin-menu');
+    Route::any('/interface', '\App\Http\Controllers\MenuController@getInterfaces')->name('interface');
 
     Route::get('/', function () {
         return view('welcome');
