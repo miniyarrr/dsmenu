@@ -29,20 +29,21 @@ class MenuController extends Controller
     public function index(Request $request)
     {
 
-        dd(Auth::user());
         $this->consumer = Auth::user();
         $menu = array();
         $lang = config('app.locale');
 
         if ($request->object == 'mainmenu' && $request->module == 'main') {
             $params = [
-                "menutype" => $request->menutype,
+//                "menutype" => $request->menutype,
                 "check_access" => true,
                 "convert_to_list" => false,
                 "interface_id" => $request->interface_id ?? null,
             ];
 
             $menu = (new MenuManager())->buildMenu($params);
+
+            dd ($menu);
 
             return response()->json($menu, (empty($menu)) ? 403 : 200);
 
@@ -61,6 +62,8 @@ class MenuController extends Controller
             $listTranslation = $this->translateList();
             return response()->json($listTranslation);
         }
+
+//        dd(Auth::user());
     }
 
     public function buildUserProfileMenu()
