@@ -27,11 +27,6 @@ class MenuItem extends Model
         return $this->hasMany('App\Models\MenuItemAccessRole', 'menu_item_id', 'id');
     }
 
-    public function accessRole()
-    {
-        return $this->belongsTo('App\Models\AccessRole',  'id');
-    }
-
     public function parentItem()
     {
         return $this->hasMany('App\Models\MenuItem', 'menu_item_parent_id', 'id')

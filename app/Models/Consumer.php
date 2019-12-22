@@ -2,15 +2,13 @@
 
 namespace App\Models;
 
-use App\Http\Classes\StoredFileManager;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class Consumer extends Authenticatable implements JWTSubject
+class Consumer extends Authenticatable
 {
     use Notifiable;
 

@@ -36,4 +36,15 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function username()
+    {
+        return 'consumer_login';
+    }
+
+    public function showLoginForm()
+    {
+        $texts = (new \App\Http\Controllers\Api\TabTranslation\TranslationCaptionsController())->translations();
+        return view('auth.admin.login', compact('texts', 'texts'));
+    }
 }
