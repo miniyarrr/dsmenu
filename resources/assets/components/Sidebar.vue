@@ -1,5 +1,5 @@
 <template>
-    <div class="sidebar" :class="{'active':!menu_open}">
+    <div class="sidebar" :class="{'active':!menu_open}" :style="{'background-color':menu_bg_color}">
         <div class="sidebar-top" @click="menu_open=!menu_open">
             <svg xmlns="http://www.w3.org/2000/svg" width="30.531" height="15.25" viewBox="0 0 30.531 15.25">
                 <path id="menu.svg" class="cls-1"
@@ -32,18 +32,18 @@
                 menu: [
                     {
                         name: 'menu1',
-                        expanded:false,
+                        expanded: false,
                         children: [
                             {
                                 name: 'menu2',
-                                expanded:false,
-                                children:[
+                                expanded: false,
+                                children: [
                                     {
                                         name: 'menu21',
                                     }, {
                                         name: 'menu22',
-                                        expanded:false,
-                                        children:[
+                                        expanded: false,
+                                        children: [
                                             {
                                                 name: 'menu221',
                                             }, {
@@ -62,18 +62,18 @@
                     },
                     {
                         name: 'menu3',
-                        expanded:false,
+                        expanded: false,
                         children: [
                             {
                                 name: 'menu2',
-                                expanded:false,
-                                children:[
+                                expanded: false,
+                                children: [
                                     {
                                         name: 'menu21',
                                     }, {
                                         name: 'menu22',
-                                        expanded:false,
-                                        children:[
+                                        expanded: false,
+                                        children: [
                                             {
                                                 name: 'menu221',
                                             }, {
@@ -92,6 +92,7 @@
                 ]
             }
         },
+        props:['menu_bg_color'],
 
 
         components: {
@@ -104,16 +105,16 @@
     .sidebar {
         width            : 5rem;
         height           : 100vh;
-        margin-top       : -4rem;
-        background-color : #515585;
+        /*<!--margin-top       : -4rem;-->*/
+        /*background-color : #515585;*/
         transition       : all ease-in-out .3s;
-        overflow-y : auto;
+        overflow-y       : auto;
+
         &.active {
             width : 25rem;
 
             .sidebar-top {
                 justify-content : flex-start;
-                padding-left    : 2rem;
             }
         }
 
@@ -123,6 +124,15 @@
             justify-content : center;
             align-items     : center;
             border-bottom   : 1px solid #fff;
+            position        : relative;
+            cursor          : pointer;
+
+            svg {
+                position  : absolute;
+                top       : 50%;
+                transform : translateY(-50%);
+                left      : 10px;
+            }
 
             path {
                 fill   : #fff;
