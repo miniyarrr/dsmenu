@@ -41,6 +41,9 @@
             interfaceChanged(e){
                 this.$emit('interfaceChanged', {interface_id:e.target.value})
             }
+        },
+        mounted(){
+            this.current_interface = this.interfaces[0]['id']
         }
 
     }
@@ -70,6 +73,9 @@
             display : flex;
             width   : 50%;
 
+            select{
+                color : #000;
+            }
         }
 
         .header-right {

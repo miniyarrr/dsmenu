@@ -1,5 +1,5 @@
 <template>
-    <div class="app">
+    <div class="app" v-if="interfaces">
         <Header
                 :header_bg_color="header_bg_color"
                 :header_text_color="header_text_color"
