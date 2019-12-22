@@ -1,36 +1,33 @@
 <template>
-    <div class="main">
+    <div class="app">
         <Header></Header>
-        <Sidebar></Sidebar>
-        <router-view></router-view>
+        <div class="main">
+            <Sidebar :menu_bg_color="menu_bg_color" ></Sidebar>
+            <router-view
+                    @menuBG="menuBG"
+            ></router-view>
+        </div>
     </div>
 
 </template>
 
 <script>
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
+    import Header from './components/Header';
+    import Sidebar from './components/Sidebar';
+
     export default {
         data: function () {
             return {
+                menu_bg_color: '#515585'
             }
         },
         methods: {
-            downloadFile() {
-                window.location += 'download';
-            },
-//            uploadFile(e) {
-//                var reader = new FileReader();
-//
-//                reader.readAsDataURL(e.target.files[0]);
-//
-//                reader.onload = (e) => {
-//                    this.file = e.target.result;
-//                }
-//            },
+            menuBG(e) {
+                this.menu_bg_color = e.color;
+            }
 
         },
-        components:{
+        components: {
             Header,
             Sidebar
         }
@@ -39,10 +36,14 @@ import Sidebar from './components/Sidebar';
 </script>
 
 <style lang="scss">
-html{
-    font-family:Roboto sans-serif;
-    font-size:10px;
-}
+    html {
+        font-family : Roboto sans-serif;
+        font-size   : 10px;
+    }
+
+    .main {
+        display : flex;
+    }
 
 
 </style>    
