@@ -1,6 +1,11 @@
 <template>
     <div class="app">
-        <Header :header_bg_color="header_bg_color" :header_text_color="header_text_color"></Header>
+        <Header
+                :header_bg_color="header_bg_color"
+                :header_text_color="header_text_color"
+                :interfaces="interfaces"
+                @interfaceChanged="interfaceChanged"
+        ></Header>
         <div class="main">
             <Sidebar :menu="menu"
                      :menu_bg_color="menu_bg_color"
@@ -48,7 +53,13 @@
             headerText(e) {
                 this.header_text_color = e.color;
             },
-
+            async interfaceChanged(e){
+                var menu = await axios.post('/menu', {
+                    interface_id: e.interface_id
+                });
+                console.log(menu.data);
+                this.menu = menu.data.items
+            }
 
         },
         components: {

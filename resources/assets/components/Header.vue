@@ -3,6 +3,12 @@
         <div class="container">
             <div class="header-left">
                 <h1>DS menu</h1>
+                <select @change="interfaceChanged" v-model="current_interface">
+                    <option v-for="interf in interfaces" :value="interf.id">
+                        {{ interf.name}}
+
+                    </option>
+                </select>
             </div>
             <div class="header-right">
                 <div class="links">
@@ -18,14 +24,22 @@
     import axios from 'axios'
 
     export default {
+        data(){
+            return{
+                current_interface:null
+            }
+        },
         name: "Header",
-        props:['header_bg_color','header_text_color'],
+        props: ['header_bg_color', 'header_text_color', 'interfaces'],
         methods: {
             logout() {
                 axios.post('/logout')
                     .then(res => {
                         location.reload();
                     })
+            },
+            interfaceChanged(e){
+                this.$emit('interfaceChanged', {interface_id:e.target.value})
             }
         }
 
@@ -48,7 +62,7 @@
         }
 
         h1 {
-            color : inherit;
+            color  : inherit;
             margin : 0;
         }
 
