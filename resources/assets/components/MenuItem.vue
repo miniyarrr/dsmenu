@@ -1,8 +1,8 @@
 <template>
     <li class="menu-item">
 
-        <div class="menu-item-header" @click="item.expanded = !item.expanded">
-            <h2 :style="{'color':menu_text_color}">{{item.name}}</h2>
+        <div class="menu-item-header" @click="expandChildren(item)">
+            <h2 :style="{'color':menu_text_color}">{{item.title}}</h2>
             <svg v-if="item.children" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                  enable-background="new 0 0 24 24" id="Layer_1" version="1.0" viewBox="0 0 24 24" xml:space="preserve">
                 <polyline :style="{'stroke':menu_text_color}" points="21,8.5 12,17.5 3,8.5 " fill="none" stroke="#fff" stroke-miterlimit="10"
@@ -60,6 +60,14 @@
             toggleLevel(element, e) {
                 !element.hasOwnProperty('visible') ? this.$set(element, 'visible', false) : false;
                 element.visible = !element.visible;
+
+            },
+            expandChildren(item){
+                debugger;
+                if(item.expanded===undefined){
+                    this.$set(item, 'expanded', false)
+                }
+                item.expanded = !item.expanded
 
             },
 

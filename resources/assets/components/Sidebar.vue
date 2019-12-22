@@ -31,70 +31,70 @@
         data() {
             return {
                 menu_open: false,
-                menu: [
-                    {
-                        name: 'menu1',
-                        expanded: false,
-                        children: [
-                            {
-                                name: 'menu2',
-                                expanded: false,
-                                children: [
-                                    {
-                                        name: 'menu21',
-                                    }, {
-                                        name: 'menu22',
-                                        expanded: false,
-                                        children: [
-                                            {
-                                                name: 'menu221',
-                                            }, {
-                                                name: 'menu222',
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }, {
-                                name: 'menu3',
-                            }, {
-                                name: 'menu4',
-                            },
-                        ],
-
-                    },
-                    {
-                        name: 'menu3',
-                        expanded: false,
-                        children: [
-                            {
-                                name: 'menu2',
-                                expanded: false,
-                                children: [
-                                    {
-                                        name: 'menu21',
-                                    }, {
-                                        name: 'menu22',
-                                        expanded: false,
-                                        children: [
-                                            {
-                                                name: 'menu221',
-                                            }, {
-                                                name: 'menu222',
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }, {
-                                name: 'menu3',
-                            }, {
-                                name: 'menu4',
-                            },
-                        ]
-                    }
-                ]
+                // menu: [
+                //     {
+                //         name: 'menu1',
+                //         expanded: false,
+                //         children: [
+                //             {
+                //                 name: 'menu2',
+                //                 expanded: false,
+                //                 children: [
+                //                     {
+                //                         name: 'menu21',
+                //                     }, {
+                //                         name: 'menu22',
+                //                         expanded: false,
+                //                         children: [
+                //                             {
+                //                                 name: 'menu221',
+                //                             }, {
+                //                                 name: 'menu222',
+                //                             }
+                //                         ]
+                //                     }
+                //                 ]
+                //             }, {
+                //                 name: 'menu3',
+                //             }, {
+                //                 name: 'menu4',
+                //             },
+                //         ],
+                //
+                //     },
+                //     {
+                //         name: 'menu3',
+                //         expanded: false,
+                //         children: [
+                //             {
+                //                 name: 'menu2',
+                //                 expanded: false,
+                //                 children: [
+                //                     {
+                //                         name: 'menu21',
+                //                     }, {
+                //                         name: 'menu22',
+                //                         expanded: false,
+                //                         children: [
+                //                             {
+                //                                 name: 'menu221',
+                //                             }, {
+                //                                 name: 'menu222',
+                //                             }
+                //                         ]
+                //                     }
+                //                 ]
+                //             }, {
+                //                 name: 'menu3',
+                //             }, {
+                //                 name: 'menu4',
+                //             },
+                //         ]
+                //     }
+                // ]
             }
         },
-        props:['menu_bg_color', 'menu_text_color'],
+        props:['menu','menu_bg_color', 'menu_text_color'],
 
 
         components: {

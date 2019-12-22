@@ -2,7 +2,7 @@
     <div class="app">
         <Header :header_bg_color="header_bg_color" :header_text_color="header_text_color"></Header>
         <div class="main">
-            <Sidebar
+            <Sidebar :menu="menu"
                     :menu_bg_color="menu_bg_color"
                     :menu_text_color="menu_text_color"
             >
@@ -30,7 +30,8 @@
                 menu_bg_color: null,
                 menu_text_color: null,
                 header_bg_color: null,
-                header_text_color:null
+                header_text_color:null,
+                menu:null
             }
         },
         methods: {
@@ -58,7 +59,7 @@
                 interface_id: 1
             })
                 .then(res => {
-                    console.log(res.data);
+                   this.menu = res.data.items
                 });
 
             this.menu_bg_color = 'blue';
