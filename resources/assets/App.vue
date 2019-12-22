@@ -3,8 +3,8 @@
         <Header :header_bg_color="header_bg_color" :header_text_color="header_text_color"></Header>
         <div class="main">
             <Sidebar :menu="menu"
-                    :menu_bg_color="menu_bg_color"
-                    :menu_text_color="menu_text_color"
+                     :menu_bg_color="menu_bg_color"
+                     :menu_text_color="menu_text_color"
             >
 
             </Sidebar>
@@ -30,8 +30,9 @@
                 menu_bg_color: null,
                 menu_text_color: null,
                 header_bg_color: null,
-                header_text_color:null,
-                menu:null
+                header_text_color: null,
+                menu: null,
+                interfaces:null
             }
         },
         methods: {
@@ -54,13 +55,16 @@
             Header,
             Sidebar
         },
-        mounted() {
-            axios.post('/menu', {
-                interface_id: 1
-            })
-                .then(res => {
-                   this.menu = res.data.items
-                });
+        async mounted() {
+
+            var interfaces = await axios.post('/interface')
+            this.interfaces = interfaces.data;
+
+            var menu = await axios.post('/menu', {
+                interface_id: this.interfaces[0]['id']
+            });
+            console.log(menu.data);
+            this.menu = menu.data.items
 
             this.menu_bg_color = 'blue';
             this.menu_text_color = '#fff';
