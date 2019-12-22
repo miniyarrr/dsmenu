@@ -13,6 +13,7 @@ class CreateAccessRolesTable extends Migration
             $table->integer('interface_id')->nullable();
             $table->string('access_role_code',30)->nullable();
             $table->string('access_role_name',100)->nullable();
+            $table->timestamps();
         });
     }
 
