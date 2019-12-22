@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
@@ -81,12 +80,12 @@ class Consumer extends Authenticatable
 
         elseif(config("database.default") == "pgsql")
         {
-            $data = DB::table('__UserInterfaces as ui')->whereRaw('ui.id IN (select ar.user_interface_id 
+            $data = DB::table('__UserInterfaces as ui')->whereRaw('ui.id IN (select ar.interface_id 
                                                 from "_AccessRoles" as ar
                                                 where ar.id in (select car.access_role_id 
                                                     from "_ConsumerAccessRoles" as car 
                                                     where consumer_id = ' . $consumer_id . '))')
-                ->select('id', 'user_interface_name as name', 'home_url')->orderBy('id', 'asc')->get()->toArray();
+                ->select('id', 'interface_name as name')->orderBy('id', 'asc')->get()->toArray();
         }
 
         $data = json_decode(json_encode($data), true);
