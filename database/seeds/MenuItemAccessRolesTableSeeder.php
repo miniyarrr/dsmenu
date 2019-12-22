@@ -24,7 +24,7 @@ class MenuItemAccessRolesTableSeeder extends Seeder
         /**/
         \App\Models\MenuItemAccessRole::create([
             'id' => 2,
-            'menu_item_id' => 1,
+            'menu_item_id' => 2,
             'access_role_id' => 2,
             'menu_item_view_l' => true,
         ]);
