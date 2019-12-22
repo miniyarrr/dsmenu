@@ -35,13 +35,15 @@ class MenuController extends Controller
 
         if ($request->object == 'mainmenu' && $request->module == 'main') {
             $params = [
-                "menutype" => $request->menutype,
+//                "menutype" => $request->menutype,
                 "check_access" => true,
                 "convert_to_list" => false,
                 "interface_id" => $request->interface_id ?? null,
             ];
 
             $menu = (new MenuManager())->buildMenu($params);
+
+            dd ($menu);
 
             return response()->json($menu, (empty($menu)) ? 403 : 200);
 
@@ -61,7 +63,7 @@ class MenuController extends Controller
             return response()->json($listTranslation);
         }
 
-        dd(Auth::user());
+//        dd(Auth::user());
     }
 
     public function buildUserProfileMenu()
