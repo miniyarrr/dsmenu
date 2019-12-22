@@ -33,7 +33,9 @@
             Sidebar
         },
         mounted() {
-            axios.post('/menu')
+            axios.post('/menu',{
+                interface_id:1
+            })
                 .then(res => {
                     console.log(res.data);
                 })
@@ -44,7 +46,7 @@
 
 <style lang="scss">
     html {
-        font-family : Roboto sans-serif;
+        font-family : Nunito sans-serif;
         font-size   : 10px;
     }
 

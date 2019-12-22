@@ -1,9 +1,11 @@
 <template>
     <div class="config container">
         <h1>Страница настроек</h1>
-        <div class="input-row">
-           <Chrome v-model="colors" @input="menuBG"></Chrome>
+        <div class="configs">
+            <div class="input-row">
+                <Chrome v-model="colors" @input="menuBG"></Chrome>
 
+            </div>
         </div>
 
     </div>
@@ -38,6 +40,12 @@
 <style scoped lang="scss">
     .config {
         display : flex;
-
+        flex-direction : column;
+        .configs{
+            display : flex;
+            .vc-chrome{
+                width : 18rem;
+            }
+        }
     }
 </style>
