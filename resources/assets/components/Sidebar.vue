@@ -36,6 +36,52 @@
                         children: [
                             {
                                 name: 'menu2',
+                                expanded:false,
+                                children:[
+                                    {
+                                        name: 'menu21',
+                                    }, {
+                                        name: 'menu22',
+                                        expanded:false,
+                                        children:[
+                                            {
+                                                name: 'menu221',
+                                            }, {
+                                                name: 'menu222',
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }, {
+                                name: 'menu3',
+                            }, {
+                                name: 'menu4',
+                            },
+                        ],
+
+                    },
+                    {
+                        name: 'menu3',
+                        expanded:false,
+                        children: [
+                            {
+                                name: 'menu2',
+                                expanded:false,
+                                children:[
+                                    {
+                                        name: 'menu21',
+                                    }, {
+                                        name: 'menu22',
+                                        expanded:false,
+                                        children:[
+                                            {
+                                                name: 'menu221',
+                                            }, {
+                                                name: 'menu222',
+                                            }
+                                        ]
+                                    }
+                                ]
                             }, {
                                 name: 'menu3',
                             }, {
@@ -61,7 +107,7 @@
         margin-top       : -4rem;
         background-color : #515585;
         transition       : all ease-in-out .3s;
-
+        overflow-y : auto;
         &.active {
             width : 25rem;
 
