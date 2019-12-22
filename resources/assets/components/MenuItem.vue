@@ -2,7 +2,11 @@
     <li class="menu-item">
 
         <div class="menu-item-header" @click="expandChildren(item)">
-            <h2 :style="{'color':menu_text_color}">{{item.title}}</h2>
+            <h2 >
+                <router-link :style="{'color':menu_text_color}" :to="item.link">
+                    {{item.title}}
+                </router-link>
+            </h2>
             <svg v-if="item.children" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                  enable-background="new 0 0 24 24" id="Layer_1" version="1.0" viewBox="0 0 24 24" xml:space="preserve">
                 <polyline :style="{'stroke':menu_text_color}" points="21,8.5 12,17.5 3,8.5 " fill="none" stroke="#fff" stroke-miterlimit="10"
@@ -63,7 +67,6 @@
 
             },
             expandChildren(item){
-                debugger;
                 if(item.expanded===undefined){
                     this.$set(item, 'expanded', false)
                 }
@@ -120,8 +123,13 @@
             justify-content : space-between;
 
             h2 {
-                font-size   : 2rem;
+                font-size   : 1.8rem;
                 user-select : none;
+                margin : 0;
+                a{
+                    font-size   : 1.8rem;
+                    text-decoration : none;
+                }
             }
 
             svg {
