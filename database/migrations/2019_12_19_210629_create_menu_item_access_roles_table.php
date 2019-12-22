@@ -13,6 +13,7 @@ class CreateMenuItemAccessRolesTable extends Migration
             $table->integer('menu_item_id')->nullable();
             $table->integer('access_role_id')->nullable();
             $table->boolean('menu_item_view_l')->nullable();
+            $table->timestamps();
         });
     }
 

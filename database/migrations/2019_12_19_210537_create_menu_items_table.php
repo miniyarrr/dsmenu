@@ -15,6 +15,7 @@ class CreateMenuItemsTable extends Migration
             $table->string('menu_item_name',100)->nullable();
             $table->string('menu_item_code', 100)->nullable();
             $table->integer('line_n')->nullable();
+            $table->timestamps();
         });
     }
 

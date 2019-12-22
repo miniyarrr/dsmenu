@@ -13,6 +13,7 @@ class CreateConsumerAccessRolesTable extends Migration
             $table->integer('access_role_id')->nullable();
             $table->integer('consumer_id')->nullable();
             $table->boolean('main_l')->nullable();
+            $table->timestamps();
         });
     }
 

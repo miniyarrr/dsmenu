@@ -13,6 +13,7 @@ class CreateInterfacesTable extends Migration
             $table->integer('menu_item_id')->nullable();
             $table->string('interface_code', 100)->nullable();
             $table->string('interface_name', 100)->nullable();
+            $table->timestamps();
         });
     }
 
