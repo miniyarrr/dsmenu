@@ -10,33 +10,41 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
 
 
 Route::group(['middleware' => 'guest'], function () {
 
-    Route::get('/', function () {
-        return view('auth.login');
-    });
+//    Route::get('/', function () {
+//        return view('auth.login');
+//    });
 
-    Route::get('/{any}', function () {
-        return view('auth.login');
-    });
+//    Route::get('/{any}', function () {
+//        return view('auth.login');
+//    });
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::post('/logout', function () {
+//    Route::post('/logout', function () {
+//        \Illuminate\Support\Facades\Auth::logout();
+//        return view('auth.login');
+//    });
+    Route::get('/home', function () {
         \Illuminate\Support\Facades\Auth::logout();
-        return view('auth.login');
-    });
-    Route::get('/', function () {
-        return view('welcome');
-    });
-    Route::get('/{any}', function () {
-        return view('welcome');
+        return view('home');
     });
 
+    Route::any('/menu', '\App\Http\Controllers\MenuController@index')->name('admin-menu');
+
+//    Route::get('/', function () {
+//        return view('welcome');
+//    });
+//    Route::get('/{any}', function () {
+//        return view('welcome');
+//    });
+
 });
+
+Auth::routes();
 
 
 
