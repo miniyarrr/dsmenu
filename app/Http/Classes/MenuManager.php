@@ -322,7 +322,7 @@ class MenuManager
             foreach ($item as $field_name => $field_value) {
                 if ($field_name == 'title')
                     $cur_item = Arr::add($cur_item, $field_name, $separator . self::$marker . $field_value);
-                else
+                else if ($field_name = 'children')
                     $cur_item = Arr::add($cur_item, $field_name, $field_value);
             }
             array_push($list_menu, $cur_item);
