@@ -34,6 +34,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/interface', '\App\Http\Controllers\MenuController@getInterfaces')->name('interface');
     Route::any('/menuItems', '\App\Http\Controllers\MenuItemsController@list')->name('menu-items-list');
     Route::any('/menuUpdate', '\App\Http\Controllers\MenuItemsController@update')->name('menu-items-update');
+    Route::any('/systemParams', '\App\Http\Controllers\SystemParametersController@index')->name('get-system-params');
+    Route::any('/saveParams', '\App\Http\Controllers\SystemParametersController@update')->name('update-system-params');
 
     Route::get('/', function () {
         return view('welcome');
