@@ -20,6 +20,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => true,
             'menu_item_name' => 'Первое меню',
             'menu_item_code' => 'FirstMenu',
+            'url' => 'FirstMenu',
             'line_n' => 1,
         ]);
 
@@ -30,6 +31,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => true,
             'menu_item_name' => 'Второе меню',
             'menu_item_code' => 'SecondMenu',
+            'url' => 'menuItems',
             'line_n' => 2,
         ]);
 
@@ -40,6 +42,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => true,
             'menu_item_name' => 'Тест 1 1',
             'menu_item_code' => 'Test11',
+            'url' => 'menuItems',
             'line_n' => 1,
         ]);
 
@@ -50,6 +53,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Тест 1 2',
             'menu_item_code' => 'Test12',
+            'url' => 'menuItems',
             'line_n' => 2,
         ]);
 
@@ -60,6 +64,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Тест 1 3',
             'menu_item_code' => 'Test13',
+            'url' => 'menuItems',
             'line_n' => 3,
         ]);
 
@@ -70,6 +75,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Тест 1 1 1',
             'menu_item_code' => 'Test111',
+            'url' => 'menuItems',
             'line_n' => 1,
         ]);
 
@@ -80,6 +86,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Тест 1 1 2',
             'menu_item_code' => 'Test112',
+            'url' => 'menuItems',
             'line_n' => 2,
         ]);
 
@@ -90,6 +97,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Тест 1 1 3',
             'menu_item_code' => 'Test113',
+            'url' => 'menuItems',
             'line_n' => 3,
         ]);
 
@@ -100,6 +108,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => true,
             'menu_item_name' => 'Тест 2 1',
             'menu_item_code' => 'Test21',
+            'url' => 'menuItems',
             'line_n' => 1,
         ]);
 
@@ -110,6 +119,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Тест 2 2',
             'menu_item_code' => 'Test22',
+            'url' => 'menuItems',
             'line_n' => 2,
         ]);
 
@@ -120,6 +130,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Тест 2 3',
             'menu_item_code' => 'Test23',
+            'url' => 'menuItems',
             'line_n' => 3,
         ]);
 
@@ -130,6 +141,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Тест 2 1 1',
             'menu_item_code' => 'Test211',
+            'url' => 'menuItems',
             'line_n' => 1,
         ]);
 
@@ -140,6 +152,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Тест 2 1 2',
             'menu_item_code' => 'Test212',
+            'url' => 'menuItems',
             'line_n' => 2,
         ]);
 
@@ -150,6 +163,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Тест 2 1 3',
             'menu_item_code' => 'Test213',
+            'url' => 'Test213',
             'line_n' => 3,
         ]);
 
