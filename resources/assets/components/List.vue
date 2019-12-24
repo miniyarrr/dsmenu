@@ -1,5 +1,6 @@
 <template>
     <div class="list container">
+        <button @click="save">Sohranit`</button>
         <div class="item-block" v-for="item in items">
 
             <div class="input-box">
@@ -29,7 +30,13 @@
                 items: []
             }
         },
-        methods: {},
+        methods: {
+            save(){
+                axios.post('menuUpdate',{
+                    menu_items:this.items
+                })
+            }
+        },
         async mounted() {
             // debugger;
             var res = await axios.post('/menuItems');
