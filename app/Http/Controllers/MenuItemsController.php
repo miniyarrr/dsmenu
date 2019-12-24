@@ -27,15 +27,15 @@ class MenuItemsController extends Controller
             'check_access' => false,
             'convert_to_list' => true,
             'indentation' => [
-                'marker' => '- ',
-                'indent' => 15,
+                'indent' => 10
             ],
             'fields_list' => [
                 'id',
                 'menu_item_code',
                 'title',
                 'line_n',
-                'padding'
+                'padding',
+                'url'
             ],
         ];
 
@@ -49,74 +49,6 @@ class MenuItemsController extends Controller
                 "form_title"                    => "Пункты меню",
                 "form_code"                     => "MenuItems",
             ],
-            "tabs"             => [
-//                [
-//                    "tab_title" => $getArrayCaptions['Main']['translation_captions']['caption_translation'],
-//                    "blocks_quantity" => 1,
-//                    "blocks"          => [
-//                        [
-//                            "block_zone_quantity" => 1, //add Albert Topalu
-//                            "block_model"         => $controller->controller_alias,
-//                            "block_type"          => "block_list_base",
-//                            "block_fields"        => [
-//                                ['key'      => 'actions', 'type'    => 'checkbox',
-//                                    'sortable' => false,
-//                                    'class'    => 'list_checkbox',
-//                                    'thStyle'  => 'width: 5%',
-//                                    "zone"     => "1",
-//                                    "order"    => "1"
-//                                ],
-//                                [
-//                                    'key'       => 'line_n',
-//                                    'sortable'  => false,
-//                                    'class'     => 'line_n',
-//                                    'label'     => $getArrayCaptions['LineNumber']['translation_captions']['caption_translation'],
-//                                    'thStyle'   => 'width: 5%',
-//                                    "zone"      => "1",
-//                                    "order"     => "2"
-//                                ],
-//                                [
-//                                    'key'       => 'title',
-//                                    'sortable'  => false,
-//                                    'class'     => 'title',
-//                                    'label'     => $getArrayCaptions['Name']['translation_captions']['caption_translation'],
-//                                    'thStyle'   => 'width: 30%',
-//                                    "zone"      => "1",
-//                                    "order"     => "3",
-//                                    'type'      => 'html',
-//                                ],
-//                                [
-//                                    'key'       => 'menu_item_code',
-//                                    'sortable'  => false,
-//                                    'class'     => 'menu_item_code',
-//                                    'label'     => $getArrayCaptions['Code']['translation_captions']['caption_translation'],
-//                                    'thStyle'   => 'width: 22%',
-//                                    "zone"      => "1",
-//                                    "order"     => "4"
-//                                ],
-//                                [
-//                                    'key'       => 'access_allowed_role_name',
-//                                    'sortable'  => false,
-//                                    'class'     => 'access_allowed_role_name',
-//                                    'label'     => $getArrayCaptions['RoleAccess']['translation_captions']['caption_translation'],
-//                                    'thStyle'   => 'width: 19%',
-//                                    "zone"      => "1",
-//                                    "order"     => "5"
-//                                ],
-//                                [
-//                                    'key'       => 'access_denied_role_name',
-//                                    'sortable'  => false,
-//                                    'class'     => 'access_denied_role_name',
-//                                    'label'     => $getArrayCaptions['RoleForbidden']['translation_captions']['caption_translation'],
-//                                    'thStyle'   => 'width: 19%',
-//                                    "zone"      => "1",
-//                                    "order"     => "4"
-//                                ],
-//                            ]
-//                        ]
-//                    ]
-//                ],
-            ]
         ];
 
         return response()->json($list);
