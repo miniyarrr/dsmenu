@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
          $this->call(InterfacesTableSeeder::class);
          $this->call(MenuItemsTableSeeder::class);
          $this->call(MenuItemAccessRolesTableSeeder::class);
+         $this->call(SystemParametersSeeder::class);
     }
 }

@@ -38,7 +38,7 @@
                 header_bg_color: null,
                 header_text_color: null,
                 menu: null,
-                interfaces:null
+                interfaces: null
             }
         },
         methods: {
@@ -54,7 +54,7 @@
             headerText(e) {
                 this.header_text_color = e.color;
             },
-            async interfaceChanged(e){
+            async interfaceChanged(e) {
                 var menu = await axios.post('/menu', {
                     interface_id: e.interface_id
                 });
@@ -77,7 +77,10 @@
                 interface_id: this.interfaces[0]['id']
             });
             console.log(menu.data);
-            this.menu = menu.data.items
+            this.menu = menu.data.items;
+            var params = await axios.post('/systemParams');
+            console.log(params.data);
+
 
             this.menu_bg_color = 'blue';
             this.menu_text_color = '#fff';
