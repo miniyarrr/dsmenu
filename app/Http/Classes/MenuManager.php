@@ -332,7 +332,7 @@ class MenuManager
             }
             array_push($list_menu, $cur_item);
             if (isset($item['children'])){
-                $children_list = $this->convertMenuToList($item['children'], $separator . '  ');
+                $children_list = $this->convertMenuToList($item['children'], $separator);
                 $list_menu = array_merge($list_menu, $children_list);
             }
         }

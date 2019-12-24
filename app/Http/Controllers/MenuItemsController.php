@@ -64,7 +64,7 @@ class MenuItemsController extends Controller
 
         foreach ($rows as $row){
             try {
-                MenuItem::where('id', $row['id'])->update(['menu_item_name' => $row['menu_item_name'],
+                MenuItem::where('id', $row['id'])->update(['menu_item_name' => $row['title'],
                     'menu_item_code' => $row['menu_item_code'],
                     'url' => $row['url'],
                     'line_n' => $row['line_n']]);
