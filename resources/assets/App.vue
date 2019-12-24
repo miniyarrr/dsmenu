@@ -13,11 +13,16 @@
             >
 
             </Sidebar>
-            <router-view
-                    @menuBG="menuBG"
-                    @menuText="menuText"
-                    @headerBG="headerBG"
-                    @headerText="headerText"
+            <router-view v-if="show_config"
+                         @menuBG="menuBG"
+                         @menuText="menuText"
+                         @headerBG="headerBG"
+                         @headerText="headerText"
+
+                         :p_menu_bg_color="menu_bg_color"
+                         :p_menu_text_color="menu_text_color"
+                         :p_header_bg_color="header_bg_color"
+                         :p_header_text_color="header_text_color"
             ></router-view>
         </div>
     </div>
@@ -38,7 +43,8 @@
                 header_bg_color: null,
                 header_text_color: null,
                 menu: null,
-                interfaces: null
+                interfaces: null,
+                show_config: false
             }
         },
         methods: {
@@ -79,13 +85,11 @@
             console.log(menu.data);
             this.menu = menu.data.items;
             var params = await axios.post('/systemParams');
-            console.log(params.data);
-
-
-            this.menu_bg_color = 'blue';
-            this.menu_text_color = '#fff';
-            this.header_bg_color = 'green';
-            this.header_text_color = '#FFF'
+            this.show_config = true;
+            this.menu_bg_color = params.data.menu_bg_color;
+            this.menu_text_color = params.data.menu_text_color;
+            this.header_bg_color = params.data.header_bg_color;
+            this.header_text_color = params.data.header_text_color;
         }
     }
 

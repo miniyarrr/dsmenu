@@ -1,6 +1,9 @@
 <template>
     <div class="config container">
-        <h1>Страница настроек</h1>
+        <div class="config-header">
+            <h1>Страница настроек</h1>
+            <button @click="save">Сохранить</button>
+        </div>
         <div class="configs">
             <div class="input-row">
                 <h4>Цвет меню</h4>
@@ -29,18 +32,19 @@
 
 <script>
     import {Chrome} from 'vue-color'
+    import axios from 'axios';
 
     export default {
         name: "Config",
         data() {
             return {
-                menu_bg_color: '#fff',
-                menu_text_color: '#fff',
-                header_bg_color: '#fff',
-                header_text_color:'fff',
+                menu_bg_color: {hex: '#fff'},
+                menu_text_color: {hex: '#fff'},
+                header_bg_color: {hex: '#fff'},
+                header_text_color: {hex: '#fff'},
             }
         },
-
+        props: ['p_menu_bg_color', 'p_menu_text_color', 'p_header_bg_color', 'p_header_text_color'],
         methods: {
             menuBG(e) {
                 this.$emit('menuBG', {color: e.hex});
@@ -51,8 +55,19 @@
             headerBG(e) {
                 this.$emit('headerBG', {color: e.hex});
             },
-            headerText(e){
+            headerText(e) {
                 this.$emit('headerText', {color: e.hex});
+            },
+            save() {
+                axios.post('/saveParams', {
+                    menu_bg_color: this.menu_bg_color.hex,
+                    menu_text_color: this.menu_text_color.hex,
+                    header_bg_color: this.header_bg_color.hex,
+                    header_text_color: this.header_text_color.hex
+                })
+                    .then(res => {
+                        console.log('saved successfully');
+                    })
             }
 
 
@@ -60,6 +75,12 @@
         components: {
             Chrome
 
+        },
+        mounted(){
+            this.menu_bg_color = {hex:this.p_menu_bg_color};
+            this.menu_text_color = {hex:this.p_menu_text_color};
+            this.header_bg_color = {hex:this.p_header_bg_color};
+            this.header_text_color = {hex:this.p_header_text_color};
         }
     }
 </script>
@@ -74,6 +95,7 @@
 
             .input-row {
                 margin : 0rem 1rem;
+
                 .vc-chrome {
                     width : 18rem;
                 }
