@@ -27,6 +27,7 @@
 <script>
     import Header from './components/Header';
     import Sidebar from './components/Sidebar';
+    import List from './components/List';
     import axios from 'axios'
 
     export default {
@@ -64,7 +65,8 @@
         },
         components: {
             Header,
-            Sidebar
+            Sidebar,
+            List
         },
         async mounted() {
 
