@@ -9,11 +9,11 @@
             </div>
             <div class="input-box">
                 <label>Код</label>
-                <input type="text" v-model="item.code">
+                <input type="text" v-model="item.menu_item_code">
             </div>
             <div class="input-box">
                 <label>Ссылка</label>
-                <input type="text" v-model="item.link">
+                <input type="text" v-model="item.url">
             </div>
         </div>
     </div>
