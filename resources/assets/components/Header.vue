@@ -12,7 +12,8 @@
             </div>
             <div class="header-right">
                 <div class="links">
-                    <router-link to="/config">CONFIG</router-link>
+                    <router-link to="/list">List</router-link>
+                    <router-link to="/configuration">CONFIG</router-link>
                     <a @click="logout">LOGOUT</a>
                 </div>
             </div>
