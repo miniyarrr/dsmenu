@@ -173,70 +173,12 @@ class MenuManager
                     $url = $menuItem['url'] ?? 'sosi';
                     $item = Arr::add($item, "url", $url);
                     break;
-                case($temp == 'access_allowed_role_name'):
-                    $access_allowed_role_name = '';
-                    foreach ($menuItem['menu_item_access_role'] as $access_role) {
-                        if ($access_role['menu_item_view_l'] == true)
-                            $access_allowed_role_name = $access_allowed_role_name . $access_role['access_role']['access_role_name'] . ', ';
-                    }
-                    $access_allowed_role_name   = Str::replaceLast(', ', '', $access_allowed_role_name);
-                    $item = Arr::add($item, "access_allowed_role_name", $access_allowed_role_name);
-                    break;
-                case($temp == 'access_denied_role_name'):
-                    $access_denied_role_name  = '';
-                    foreach ($menuItem['menu_item_access_role'] as $access_role) {
-                        if ($access_role['menu_item_view_l'] != true)
-                            $access_denied_role_name  = $access_denied_role_name  . $access_role['access_role_name'] . ', ';
-                    }
-                    $access_denied_role_name    = Str::replaceLast(', ', '', $access_denied_role_name );
-                    $item = Arr::add($item, "access_denied_role_name",  $access_denied_role_name );
-                    break;
-                case($temp == 'image'):
-                    $image = '';
-                    if ($menuItem['image_id'] == NULL) {
-                        if ($menuItem['group_l'] == 1) {
-                            $image = '/img/interfacedashboard/folder.svg';
-                        } else {
-                            $image = '/img/interfacedashboard/file.svg';
-                        }
-                    } else {
-                        $image = $menuItem['image']['image_path'];
-                    }
-                    $item = Arr::add($item, "img", $image);
-                    break;
                 case($temp == 'depth'):
                     $item = Arr::add($item, "depth", $depth);
                     break;
                 case($temp == 'padding'):
                     $item = Arr::add($item, "padding", ($depth - 1) * self::$indent);
                     break;
-//                case($temp == 'link'):
-//                    $link = '';
-////                    if ($menuItem['group_l'] == 0 && $menuItem['fe_route'] != NULL) {
-////                        foreach ($menuItem['fe_route']['fe_route_url'] as $fe_route_url) {
-////                            //commit Albert Topalu 18.04.19 14:44
-//////                    if ($fe_route_url['use_card_l'] === 0 && $fe_route_url['fe_url'] != NULL) {
-////                            //END commit Albert Topalu 18.04.19 14:44
-////
-////                            //Edit Albert Topalu 18.04.19 14:44  $fe_route_url['use_card_l'] === ->  $fe_route_url['use_card_l'] ==
-////                            if ($fe_route_url['use_card_l'] == 0 && $fe_route_url['fe_url'] != NULL) {
-////                                $link = '/' . $fe_route_url['fe_url']['fe_url_code'];
-////                            }
-////                            //END Edit Albert Topalu 18.04.19 14:44
-////                        }
-////                    }
-//                    $item = Arr::add($item, "link", $link);
-//                    break;
-//                case($temp == 'separator'):
-//                    $item = Arr::add($item, "separator", '10');
-//                    break;
-//                case($temp == 'group_l'):
-//                    if ($menuItem['group_l'] == 0) {
-//                        $item = Arr::add($item, 'group_l', '0');
-//                    } else {
-//                        $item = Arr::add($item, 'group_l', '1');
-//                    }
-//                    break;
                 case($temp == 'line_n'):
                     $item = Arr::add($item, 'line_n', (string) $menuItem['line_n']);
                     break;
