@@ -52,9 +52,6 @@ class MenuManager
             self::$fields_list = [
                 'title',
                 'depth',
-                'link',
-                'group_l',
-                'separator',
                 'url',
             ];
         }

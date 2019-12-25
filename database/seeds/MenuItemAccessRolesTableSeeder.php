@@ -117,6 +117,22 @@ class MenuItemAccessRolesTableSeeder extends Seeder
             'menu_item_view_l' => false,
         ]);
 
+        /**/
+        \App\Models\MenuItemAccessRole::create([
+            'id' => 14,
+            'menu_item_id' => 1,
+            'access_role_id' => 5,
+            'menu_item_view_l' => true,
+        ]);
+
+        /**/
+        \App\Models\MenuItemAccessRole::create([
+            'id' => 15,
+            'menu_item_id' => 1,
+            'access_role_id' => 6,
+            'menu_item_view_l' => true,
+        ]);
+
         if (config("database.default") == "pgsql")
             \Illuminate\Support\Facades\DB::statement("SELECT setval('\"public\".\"MenuItemAccessRoles_id_seq\"', 2000, true)");
 
