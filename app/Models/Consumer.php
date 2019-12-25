@@ -56,11 +56,6 @@ class Consumer extends Authenticatable
         return $this->hasMany('App\Models\ConsumerAccessRole', 'consumer_id', 'id'); //
     }
 
-    public function getDisplayName()
-    {
-        return $this->getAttributeValue("consumer_name");
-    }
-
     public function getUserInterfaces()
     {
         $consumer_id = $this->getAttributeValue("id");
