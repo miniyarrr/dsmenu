@@ -519,6 +519,50 @@ class MenuItemsTableSeeder extends Seeder
             'line_n' => 2,
         ]);
 
+        /**/
+        \App\Models\MenuItem::create([
+            'id' => 47,
+            'menu_item_parent_id' => 1,
+            'group_l' => true,
+            'menu_item_name' => 'Тестирование меню',
+            'menu_item_code' => 'TestMenu',
+            'url' => 'test',
+            'line_n' => 9,
+        ]);
+
+        /**/
+        \App\Models\MenuItem::create([
+            'id' => 48,
+            'menu_item_parent_id' => 47,
+            'group_l' => false,
+            'menu_item_name' => 'Разработка',
+            'menu_item_code' => 'Develop',
+            'url' => 'test',
+            'line_n' => 1,
+        ]);
+
+        /**/
+        \App\Models\MenuItem::create([
+            'id' => 49,
+            'menu_item_parent_id' => 47,
+            'group_l' => false,
+            'menu_item_name' => 'Системмные параметры',
+            'menu_item_code' => 'SystemParameters',
+            'url' => 'test',
+            'line_n' => 2,
+        ]);
+
+        /**/
+        \App\Models\MenuItem::create([
+            'id' => 50,
+            'menu_item_parent_id' => 47,
+            'group_l' => false,
+            'menu_item_name' => 'Администрирование',
+            'menu_item_code' => 'Administration',
+            'url' => 'test',
+            'line_n' => 3,
+        ]);
+
 
         if (config("database.default") == "pgsql")
             \Illuminate\Support\Facades\DB::statement("SELECT setval('\"public\".\"MenuItems_id_seq\"', 200, true)");
