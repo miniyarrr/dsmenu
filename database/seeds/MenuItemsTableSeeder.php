@@ -82,12 +82,12 @@ class MenuItemsTableSeeder extends Seeder
         /**/
         \App\Models\MenuItem::create([
             'id' => 7,
-            'menu_item_parent_id' => 1,
+            'menu_item_parent_id' => 2,
             'group_l' => true,
             'menu_item_name' => 'CMS',
             'menu_item_code' => 'CMS',
             'url' => 'menuItems',
-            'line_n' => 6,
+            'line_n' => 9,
         ]);
 
         /**/
@@ -384,7 +384,7 @@ class MenuItemsTableSeeder extends Seeder
             'menu_item_name' => 'VIM',
             'menu_item_code' => 'VIM',
             'url' => 'menuItems',
-            'line_n' => 8,
+            'line_n' => 9,
         ]);
 
         /**/
@@ -395,7 +395,7 @@ class MenuItemsTableSeeder extends Seeder
             'menu_item_name' => 'Azure',
             'menu_item_code' => 'Azure',
             'url' => 'menuItems',
-            'line_n' => 8,
+            'line_n' => 10,
         ]);
 
         /**/
@@ -406,7 +406,7 @@ class MenuItemsTableSeeder extends Seeder
             'menu_item_name' => 'Webpack',
             'menu_item_code' => 'Webpack',
             'url' => 'menuItems',
-            'line_n' => 8,
+            'line_n' => 11,
         ]);
 
         /**/
@@ -417,7 +417,7 @@ class MenuItemsTableSeeder extends Seeder
             'menu_item_name' => 'Google Cloud',
             'menu_item_code' => 'GoogleCloud',
             'url' => 'menuItems',
-            'line_n' => 8,
+            'line_n' => 12,
         ]);
 
         /**/
@@ -428,7 +428,95 @@ class MenuItemsTableSeeder extends Seeder
             'menu_item_name' => 'NPM',
             'menu_item_code' => 'NPM',
             'url' => 'menuItems',
-            'line_n' => 8,
+            'line_n' => 13,
+        ]);
+
+        /**/
+        \App\Models\MenuItem::create([
+            'id' => 39,
+            'menu_item_parent_id' => 7,
+            'group_l' => false,
+            'menu_item_name' => 'Wordpress',
+            'menu_item_code' => 'Wordpress',
+            'url' => 'menuItems',
+            'line_n' => 1,
+        ]);
+
+        /**/
+        \App\Models\MenuItem::create([
+            'id' => 40,
+            'menu_item_parent_id' => 7,
+            'group_l' => false,
+            'menu_item_name' => 'OpenChart',
+            'menu_item_code' => 'OpenChart',
+            'url' => 'menuItems',
+            'line_n' => 2,
+        ]);
+
+        /**/
+        \App\Models\MenuItem::create([
+            'id' => 41,
+            'menu_item_parent_id' => 7,
+            'group_l' => false,
+            'menu_item_name' => 'Drupal',
+            'menu_item_code' => 'Drupal',
+            'url' => 'menuItems',
+            'line_n' => 3,
+        ]);
+
+        /**/
+        \App\Models\MenuItem::create([
+            'id' => 42,
+            'menu_item_parent_id' => 7,
+            'group_l' => false,
+            'menu_item_name' => 'Joomla',
+            'menu_item_code' => 'Joomla',
+            'url' => 'menuItems',
+            'line_n' => 4,
+        ]);
+
+        /**/
+        \App\Models\MenuItem::create([
+            'id' => 43,
+            'menu_item_parent_id' => 7,
+            'group_l' => false,
+            'menu_item_name' => '1C-Битрикс',
+            'menu_item_code' => 'OneCBitrix',
+            'url' => 'menuItems',
+            'line_n' => 5,
+        ]);
+
+        /**/
+        \App\Models\MenuItem::create([
+            'id' => 44,
+            'menu_item_parent_id' => 7,
+            'group_l' => false,
+            'menu_item_name' => 'MODX',
+            'menu_item_code' => 'MODX',
+            'url' => 'menuItems',
+            'line_n' => 6,
+        ]);
+
+        /**/
+        \App\Models\MenuItem::create([
+            'id' => 45,
+            'menu_item_parent_id' => 8,
+            'group_l' => false,
+            'menu_item_name' => 'Криптовалюты',
+            'menu_item_code' => 'CryptoCurrency',
+            'url' => 'menuItems',
+            'line_n' => 1,
+        ]);
+
+        /**/
+        \App\Models\MenuItem::create([
+            'id' => 46,
+            'menu_item_parent_id' => 8,
+            'group_l' => false,
+            'menu_item_name' => 'Финансы',
+            'menu_item_code' => 'Finances',
+            'url' => 'menuItems',
+            'line_n' => 2,
         ]);
 
 
