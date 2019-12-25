@@ -12,7 +12,7 @@
 
                     </option>
                 </select>
-                <p v-else>{{interfaces[0].name}}</p>
+                <p style="margin-left: 1.5rem;" v-else>{{interfaces[0].name}}</p>
             </div>
             <div class="header-right">
                 <div class="links">
@@ -76,9 +76,10 @@
         }
 
         .header-left {
-            display : flex;
-            width   : 50%;
+            display     : flex;
+            width       : 50%;
             align-items : center;
+
             p {
                 margin-bottom : 0;
             }
