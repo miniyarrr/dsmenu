@@ -2,19 +2,23 @@
     <div class="header" :style="{'background-color':header_bg_color, 'color':header_text_color }">
         <div class="container">
             <div class="header-left">
-                <h1>DS menu</h1>
-                <select @change="interfaceChanged" v-model="current_interface">
+                <p>Роль: </p>
+                <select v-if="interfaces.length>1"
+                        @change="interfaceChanged"
+                        v-model="current_interface"
+                >
                     <option v-for="interf in interfaces" :value="interf.id">
                         {{ interf.name}}
 
                     </option>
                 </select>
+                <p v-else>{{interfaces[0].name}}</p>
             </div>
             <div class="header-right">
                 <div class="links">
-                    <router-link to="/list">List</router-link>
-                    <router-link to="/configuration">CONFIG</router-link>
-                    <a @click="logout">LOGOUT</a>
+                    <router-link to="/list">Пункты меню</router-link>
+                    <router-link to="/configuration">Настройки</router-link>
+                    <a @click="logout">Выйти</a>
                 </div>
             </div>
         </div>
@@ -25,9 +29,9 @@
     import axios from 'axios'
 
     export default {
-        data(){
-            return{
-                current_interface:null
+        data() {
+            return {
+                current_interface: null
             }
         },
         name: "Header",
@@ -39,11 +43,11 @@
                         location.reload();
                     })
             },
-            interfaceChanged(e){
-                this.$emit('interfaceChanged', {interface_id:e.target.value})
+            interfaceChanged(e) {
+                this.$emit('interfaceChanged', {interface_id: e.target.value})
             }
         },
-        mounted(){
+        mounted() {
             this.current_interface = this.interfaces[0]['id']
         }
 
@@ -63,6 +67,7 @@
             display         : flex;
             max-height      : 100%;
             justify-content : space-between;
+            align-items     : center;
         }
 
         h1 {
@@ -73,9 +78,16 @@
         .header-left {
             display : flex;
             width   : 50%;
+            align-items : center;
+            p {
+                margin-bottom : 0;
+            }
 
-            select{
-                color : #000;
+            select {
+                margin-left   : 1.5rem;
+                color         : #000;
+                border-radius : 5px;
+                padding       : 0.4rem;
             }
         }
 

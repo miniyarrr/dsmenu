@@ -2,7 +2,7 @@
     <div class="config container">
         <div class="config-header">
             <h1>Страница настроек</h1>
-            <button @click="save">Сохранить</button>
+            <button @click="save" class="btn btn-primary">Сохранить</button>
         </div>
         <div class="configs">
             <div class="input-row">
@@ -76,11 +76,11 @@
             Chrome
 
         },
-        mounted(){
-            this.menu_bg_color = {hex:this.p_menu_bg_color};
-            this.menu_text_color = {hex:this.p_menu_text_color};
-            this.header_bg_color = {hex:this.p_header_bg_color};
-            this.header_text_color = {hex:this.p_header_text_color};
+        mounted() {
+            this.menu_bg_color = {hex: this.p_menu_bg_color};
+            this.menu_text_color = {hex: this.p_menu_text_color};
+            this.header_bg_color = {hex: this.p_header_bg_color};
+            this.header_text_color = {hex: this.p_header_text_color};
         }
     }
 </script>
@@ -89,6 +89,10 @@
     .config {
         display        : flex;
         flex-direction : column;
+
+        .config-header {
+            margin-bottom : 1.5rem;
+        }
 
         .configs {
             display : flex;

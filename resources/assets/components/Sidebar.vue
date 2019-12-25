@@ -9,7 +9,7 @@
             </svg>
 
         </div>
-        <div class="sidebar-view">
+        <div class="sidebar-view" v-if="!menu_open">
             <ul class="menu-main-ul">
                 <MenuItem v-for="menu_item in menu"
                           :item="menu_item"

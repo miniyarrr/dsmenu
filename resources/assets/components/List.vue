@@ -1,6 +1,6 @@
 <template>
     <div class="list container">
-        <button @click="save">Sohranit`</button>
+        <button @click="save" class="btn btn-primary" style="margin-bottom: 1.5rem;">Сохранить</button>
         <div class="item-block" v-for="item in items">
 
             <div class="input-box">
@@ -31,9 +31,9 @@
             }
         },
         methods: {
-            save(){
-                axios.post('menuUpdate',{
-                    menu_items:this.items
+            save() {
+                axios.post('menuUpdate', {
+                    menu_items: this.items
                 })
             }
         },
@@ -56,7 +56,7 @@
             border        : 1px solid #ccbdbd;
             padding       : 1rem;
             margin-bottom : 1rem;
-            border-radius  : 5px;
+            border-radius : 5px;
 
             .input-box {
                 display        : flex;
@@ -67,7 +67,7 @@
                     padding       : 0.5rem;
                     border-radius : 5px;
                     border        : 1px solid #ccbdbd;
-                    outline : none;
+                    outline       : none;
                 }
             }
         }
