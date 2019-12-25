@@ -40,17 +40,6 @@ class Consumer extends Authenticatable
 
     ];
 
-    public function getJWTIdentifier()
-    {
-        return $this->getKey();
-    }
-
-
-    public function getJWTCustomClaims()
-    {
-        return [];
-    }
-
     public function consumerAccessRoles()
     {
         return $this->hasMany('App\Models\ConsumerAccessRole', 'consumer_id', 'id'); //
