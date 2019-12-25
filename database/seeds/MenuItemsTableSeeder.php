@@ -31,7 +31,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => true,
             'menu_item_name' => 'Frontend',
             'menu_item_code' => 'Frontend',
-            'url' => 'menuItems',
+            'url' => 'frontend',
             'line_n' => 1,
         ]);
 
@@ -42,7 +42,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => true,
             'menu_item_name' => 'Backend',
             'menu_item_code' => 'Backend',
-            'url' => 'menuItems',
+            'url' => 'backend',
             'line_n' => 2,
         ]);
 
@@ -53,7 +53,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Системное программирование',
             'menu_item_code' => 'SystemProgramming',
-            'url' => 'menuItems',
+            'url' => 'systemProgramming',
             'line_n' => 3,
         ]);
 
@@ -64,7 +64,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => true,
             'menu_item_name' => 'Tools',
             'menu_item_code' => 'Tools',
-            'url' => 'menuItems',
+            'url' => 'tools',
             'line_n' => 4,
         ]);
 
@@ -75,7 +75,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'GameDev',
             'menu_item_code' => 'Gamedev',
-            'url' => 'menuItems',
+            'url' => 'gamedev',
             'line_n' => 5,
         ]);
 
@@ -86,7 +86,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => true,
             'menu_item_name' => 'CMS',
             'menu_item_code' => 'CMS',
-            'url' => 'menuItems',
+            'url' => 'frontend/cms',
             'line_n' => 9,
         ]);
 
@@ -97,7 +97,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => true,
             'menu_item_name' => 'Blockchain',
             'menu_item_code' => 'Blockchain',
-            'url' => 'menuItems',
+            'url' => 'blockchain/',
             'line_n' => 7,
         ]);
 
@@ -108,7 +108,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => true,
             'menu_item_name' => 'Другое',
             'menu_item_code' => 'AnythingElse',
-            'url' => 'menuItems',
+            'url' => 'other',
             'line_n' => 8,
         ]);
 
@@ -119,7 +119,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Angular',
             'menu_item_code' => 'Angular',
-            'url' => 'menuItems',
+            'url' => 'frontend/angular',
             'line_n' => 1,
         ]);
 
@@ -130,7 +130,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'TypeScript',
             'menu_item_code' => 'TypeScript',
-            'url' => 'menuItems',
+            'url' => 'frontend/typeScript',
             'line_n' => 2,
         ]);
 
@@ -141,7 +141,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'HTML',
             'menu_item_code' => 'HTML',
-            'url' => 'menuItems',
+            'url' => 'frontend/html',
             'line_n' => 3,
         ]);
 
@@ -152,7 +152,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'CSS',
             'menu_item_code' => 'CSS',
-            'url' => 'menuItems',
+            'url' => 'frontend/css',
             'line_n' => 4,
         ]);
 
@@ -163,7 +163,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'JavaScript',
             'menu_item_code' => 'JavaScript',
-            'url' => 'menuItems',
+            'url' => 'frontend/javaScript',
             'line_n' => 5,
         ]);
 
@@ -174,7 +174,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Vue',
             'menu_item_code' => 'Vue',
-            'url' => 'menuItems',
+            'url' => 'frontend/Vue',
             'line_n' => 6,
         ]);
 
@@ -185,7 +185,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'React.js',
             'menu_item_code' => 'ReactJs',
-            'url' => 'menuItems',
+            'url' => 'frontend/reactJs',
             'line_n' => 7,
         ]);
 
@@ -196,7 +196,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'JQuery',
             'menu_item_code' => 'JQuery',
-            'url' => 'menuItems',
+            'url' => 'frontend/jQuery',
             'line_n' => 8,
         ]);
 
@@ -207,7 +207,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'PHP',
             'menu_item_code' => 'PHP',
-            'url' => 'menuItems',
+            'url' => 'backend/php',
             'line_n' => 1,
         ]);
 
@@ -218,7 +218,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Python',
             'menu_item_code' => 'Python',
-            'url' => 'menuItems',
+            'url' => 'backend/python',
             'line_n' => 2,
         ]);
 
@@ -229,7 +229,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Ruby on Rails',
             'menu_item_code' => 'RubyOnRails',
-            'url' => 'menuItems',
+            'url' => 'backend/rubyOnRails',
             'line_n' => 3,
         ]);
 
@@ -240,7 +240,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Laravel',
             'menu_item_code' => 'Laravel',
-            'url' => 'menuItems',
+            'url' => 'backend/laravel',
             'line_n' => 4,
         ]);
 
@@ -251,7 +251,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Symphony',
             'menu_item_code' => 'Symphony',
-            'url' => 'menuItems',
+            'url' => 'backend/symphony',
             'line_n' => 5,
         ]);
 
@@ -262,7 +262,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Java',
             'menu_item_code' => 'Java',
-            'url' => 'menuItems',
+            'url' => 'backend/java',
             'line_n' => 6,
         ]);
 
@@ -273,7 +273,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Node.js',
             'menu_item_code' => 'NodeJs',
-            'url' => 'menuItems',
+            'url' => 'backend/nodeJs',
             'line_n' => 7,
         ]);
 
@@ -284,7 +284,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'C#',
             'menu_item_code' => 'CSharp',
-            'url' => 'menuItems',
+            'url' => 'backend/cSharp',
             'line_n' => 8,
         ]);
 
@@ -295,7 +295,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'GraphQL',
             'menu_item_code' => 'GraphQL',
-            'url' => 'menuItems',
+            'url' => 'tools/graphQL',
             'line_n' => 1,
         ]);
 
@@ -306,7 +306,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Docker',
             'menu_item_code' => 'Docker',
-            'url' => 'menuItems',
+            'url' => 'tools/docker',
             'line_n' => 2,
         ]);
 
@@ -317,7 +317,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Flux',
             'menu_item_code' => 'Flux',
-            'url' => 'menuItems',
+            'url' => 'tools/flux',
             'line_n' => 3,
         ]);
 
@@ -328,7 +328,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Git',
             'menu_item_code' => 'Git',
-            'url' => 'menuItems',
+            'url' => 'tools/git',
             'line_n' => 4,
         ]);
 
@@ -339,7 +339,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Kubernetes',
             'menu_item_code' => 'Kubernetes',
-            'url' => 'menuItems',
+            'url' => 'tools/kubernetes',
             'line_n' => 5,
         ]);
 
@@ -350,7 +350,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Gulp',
             'menu_item_code' => 'Gulp',
-            'url' => 'menuItems',
+            'url' => 'tools/gulp',
             'line_n' => 6,
         ]);
 
@@ -361,7 +361,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Grunt',
             'menu_item_code' => 'Grunt',
-            'url' => 'menuItems',
+            'url' => 'tools/grunt',
             'line_n' => 7,
         ]);
 
@@ -372,7 +372,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Visual Studio Code',
             'menu_item_code' => 'VisualStudioCode',
-            'url' => 'menuItems',
+            'url' => 'tools/visualStudioCode',
             'line_n' => 8,
         ]);
 
@@ -383,7 +383,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'VIM',
             'menu_item_code' => 'VIM',
-            'url' => 'menuItems',
+            'url' => 'tools/vim',
             'line_n' => 9,
         ]);
 
@@ -394,7 +394,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Azure',
             'menu_item_code' => 'Azure',
-            'url' => 'menuItems',
+            'url' => 'tools/azure',
             'line_n' => 10,
         ]);
 
@@ -405,7 +405,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Webpack',
             'menu_item_code' => 'Webpack',
-            'url' => 'menuItems',
+            'url' => 'tools/webpack',
             'line_n' => 11,
         ]);
 
@@ -416,7 +416,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Google Cloud',
             'menu_item_code' => 'GoogleCloud',
-            'url' => 'menuItems',
+            'url' => 'tools/googleCloud',
             'line_n' => 12,
         ]);
 
@@ -427,7 +427,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'NPM',
             'menu_item_code' => 'NPM',
-            'url' => 'menuItems',
+            'url' => 'tools/npm',
             'line_n' => 13,
         ]);
 
@@ -438,7 +438,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Wordpress',
             'menu_item_code' => 'Wordpress',
-            'url' => 'menuItems',
+            'url' => 'frontend/cms/wordpress',
             'line_n' => 1,
         ]);
 
@@ -449,7 +449,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'OpenChart',
             'menu_item_code' => 'OpenChart',
-            'url' => 'menuItems',
+            'url' => 'frontend/cms/openChart',
             'line_n' => 2,
         ]);
 
@@ -460,7 +460,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Drupal',
             'menu_item_code' => 'Drupal',
-            'url' => 'menuItems',
+            'url' => 'frontend/cms/drupal',
             'line_n' => 3,
         ]);
 
@@ -471,7 +471,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Joomla',
             'menu_item_code' => 'Joomla',
-            'url' => 'menuItems',
+            'url' => 'frontend/cms/joomla',
             'line_n' => 4,
         ]);
 
@@ -482,7 +482,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => '1C-Битрикс',
             'menu_item_code' => 'OneCBitrix',
-            'url' => 'menuItems',
+            'url' => 'frontend/cms/oneCBitrix',
             'line_n' => 5,
         ]);
 
@@ -493,7 +493,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'MODX',
             'menu_item_code' => 'MODX',
-            'url' => 'menuItems',
+            'url' => 'frontend/cms/modx',
             'line_n' => 6,
         ]);
 
@@ -504,7 +504,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Криптовалюты',
             'menu_item_code' => 'CryptoCurrency',
-            'url' => 'menuItems',
+            'url' => 'blockchain/cryptoCurrency',
             'line_n' => 1,
         ]);
 
@@ -515,7 +515,7 @@ class MenuItemsTableSeeder extends Seeder
             'group_l' => false,
             'menu_item_name' => 'Финансы',
             'menu_item_code' => 'Finances',
-            'url' => 'menuItems',
+            'url' => 'blockchain/finances',
             'line_n' => 2,
         ]);
 
