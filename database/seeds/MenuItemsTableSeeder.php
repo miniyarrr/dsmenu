@@ -18,8 +18,8 @@ class MenuItemsTableSeeder extends Seeder
             'id' => 1,
             'menu_item_parent_id' => null,
             'group_l' => true,
-            'menu_item_name' => 'Первое меню',
-            'menu_item_code' => 'FirstMenu',
+            'menu_item_name' => 'МЕНЮ',
+            'menu_item_code' => 'MENU',
             'url' => 'FirstMenu',
             'line_n' => 1,
         ]);
@@ -27,12 +27,12 @@ class MenuItemsTableSeeder extends Seeder
         /**/
         \App\Models\MenuItem::create([
             'id' => 2,
-            'menu_item_parent_id' => null,
+            'menu_item_parent_id' => 1,
             'group_l' => true,
-            'menu_item_name' => 'Второе меню',
-            'menu_item_code' => 'SecondMenu',
+            'menu_item_name' => 'Frontend',
+            'menu_item_code' => 'Frontend',
             'url' => 'menuItems',
-            'line_n' => 2,
+            'line_n' => 1,
         ]);
 
         /**/
@@ -40,8 +40,8 @@ class MenuItemsTableSeeder extends Seeder
             'id' => 3,
             'menu_item_parent_id' => 1,
             'group_l' => true,
-            'menu_item_name' => 'Тест 1 1',
-            'menu_item_code' => 'Test11',
+            'menu_item_name' => 'Backend',
+            'menu_item_code' => 'Backend',
             'url' => 'menuItems',
             'line_n' => 1,
         ]);
@@ -51,8 +51,8 @@ class MenuItemsTableSeeder extends Seeder
             'id' => 4,
             'menu_item_parent_id' => 1,
             'group_l' => false,
-            'menu_item_name' => 'Тест 1 2',
-            'menu_item_code' => 'Test12',
+            'menu_item_name' => 'SystemProgramming',
+            'menu_item_code' => 'Системное программирование',
             'url' => 'menuItems',
             'line_n' => 2,
         ]);
@@ -61,9 +61,9 @@ class MenuItemsTableSeeder extends Seeder
         \App\Models\MenuItem::create([
             'id' => 5,
             'menu_item_parent_id' => 1,
-            'group_l' => false,
-            'menu_item_name' => 'Тест 1 3',
-            'menu_item_code' => 'Test13',
+            'group_l' => true,
+            'menu_item_name' => 'Tools',
+            'menu_item_code' => 'Tools',
             'url' => 'menuItems',
             'line_n' => 3,
         ]);
@@ -71,32 +71,32 @@ class MenuItemsTableSeeder extends Seeder
         /**/
         \App\Models\MenuItem::create([
             'id' => 6,
-            'menu_item_parent_id' => 3,
+            'menu_item_parent_id' => 1,
             'group_l' => false,
-            'menu_item_name' => 'Тест 1 1 1',
-            'menu_item_code' => 'Test111',
+            'menu_item_name' => 'GameDev',
+            'menu_item_code' => 'Gamedev',
             'url' => 'menuItems',
-            'line_n' => 1,
+            'line_n' => 3,
         ]);
 
         /**/
         \App\Models\MenuItem::create([
             'id' => 7,
-            'menu_item_parent_id' => 3,
-            'group_l' => false,
-            'menu_item_name' => 'Тест 1 1 2',
-            'menu_item_code' => 'Test112',
+            'menu_item_parent_id' => 1,
+            'group_l' => true,
+            'menu_item_name' => 'CMS',
+            'menu_item_code' => 'CMS',
             'url' => 'menuItems',
-            'line_n' => 2,
+            'line_n' => 3,
         ]);
 
         /**/
         \App\Models\MenuItem::create([
             'id' => 8,
-            'menu_item_parent_id' => 3,
-            'group_l' => false,
-            'menu_item_name' => 'Тест 1 1 3',
-            'menu_item_code' => 'Test113',
+            'menu_item_parent_id' => 1,
+            'group_l' => true,
+            'menu_item_name' => 'Blockchain',
+            'menu_item_code' => 'Blockchain',
             'url' => 'menuItems',
             'line_n' => 3,
         ]);
@@ -104,71 +104,17 @@ class MenuItemsTableSeeder extends Seeder
         /**/
         \App\Models\MenuItem::create([
             'id' => 9,
-            'menu_item_parent_id' => 2,
+            'menu_item_parent_id' => 1,
             'group_l' => true,
-            'menu_item_name' => 'Тест 2 1',
-            'menu_item_code' => 'Test21',
-            'url' => 'menuItems',
-            'line_n' => 1,
-        ]);
-
-        /**/
-        \App\Models\MenuItem::create([
-            'id' => 10,
-            'menu_item_parent_id' => 2,
-            'group_l' => false,
-            'menu_item_name' => 'Тест 2 2',
-            'menu_item_code' => 'Test22',
-            'url' => 'menuItems',
-            'line_n' => 2,
-        ]);
-
-        /**/
-        \App\Models\MenuItem::create([
-            'id' => 11,
-            'menu_item_parent_id' => 2,
-            'group_l' => false,
-            'menu_item_name' => 'Тест 2 3',
-            'menu_item_code' => 'Test23',
+            'menu_item_name' => 'AnythingElse',
+            'menu_item_code' => 'Другое',
             'url' => 'menuItems',
             'line_n' => 3,
         ]);
 
-        /**/
-        \App\Models\MenuItem::create([
-            'id' => 12,
-            'menu_item_parent_id' => 9,
-            'group_l' => false,
-            'menu_item_name' => 'Тест 2 1 1',
-            'menu_item_code' => 'Test211',
-            'url' => 'menuItems',
-            'line_n' => 1,
-        ]);
-
-        /**/
-        \App\Models\MenuItem::create([
-            'id' => 13,
-            'menu_item_parent_id' => 9,
-            'group_l' => false,
-            'menu_item_name' => 'Тест 2 1 2',
-            'menu_item_code' => 'Test212',
-            'url' => 'menuItems',
-            'line_n' => 2,
-        ]);
-
-        /**/
-        \App\Models\MenuItem::create([
-            'id' => 14,
-            'menu_item_parent_id' => 9,
-            'group_l' => false,
-            'menu_item_name' => 'Тест 2 1 3',
-            'menu_item_code' => 'Test213',
-            'url' => 'Test213',
-            'line_n' => 3,
-        ]);
 
         if (config("database.default") == "pgsql")
-            \Illuminate\Support\Facades\DB::statement("SELECT setval('\"public\".\"MenuItems_id_seq\"', 2000, true)");
+            \Illuminate\Support\Facades\DB::statement("SELECT setval('\"public\".\"MenuItems_id_seq\"', 200, true)");
 
     }
 }
