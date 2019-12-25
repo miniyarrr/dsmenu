@@ -52,25 +52,13 @@ class Consumer extends Authenticatable
         if(is_null($consumer_id))
             return null;
 
-        if(config("database.default") == "mysql")
-        {
-            $data = DB::table('__UserInterfaces as ui')->whereRaw('ui.id IN (select ar.user_interface_id 
-                                                from _AccessRoles as ar
-                                                where ar.id in (select car.access_role_id 
-                                                    from _ConsumerAccessRoles as car 
-                                                    where consumer_id = ' . $consumer_id . '))')
-                ->select('id', 'user_interface_name as name', 'home_url')->orderBy('id', 'asc')->get()->toArray();
-        }
 
-        elseif(config("database.default") == "pgsql")
-        {
-            $data = DB::table('__UserInterfaces as ui')->whereRaw('ui.id IN (select ar.interface_id 
-                                                from "_AccessRoles" as ar
-                                                where ar.id in (select car.access_role_id 
-                                                    from "_ConsumerAccessRoles" as car 
-                                                    where consumer_id = ' . $consumer_id . '))')
-                ->select('id', 'interface_name as name')->orderBy('id', 'asc')->get()->toArray();
-        }
+        $data = DB::table('__UserInterfaces as ui')->whereRaw('ui.id IN (select ar.interface_id 
+                                            from "_AccessRoles" as ar
+                                            where ar.id in (select car.access_role_id 
+                                                from "_ConsumerAccessRoles" as car 
+                                                where consumer_id = ' . $consumer_id . '))')
+            ->select('id', 'interface_name as name')->orderBy('id', 'asc')->get()->toArray();
 
         $data = json_decode(json_encode($data), true);
         return $data;
