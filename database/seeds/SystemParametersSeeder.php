@@ -15,10 +15,10 @@ class SystemParametersSeeder extends Seeder
 
         \App\Models\SystemParameters::create([
             'id' => 1,
-            'menu_bg_color'=>'#000',
-            'menu_text_color'=>'#fff',
-            'header_bg_color'=>'#000',
-            'header_text_color'=>'#fff',
+            'menu_bg_color'=>'#607D8B',
+            'menu_text_color'=>'#FFFFFF',
+            'header_bg_color'=>'#FF9800',
+            'header_text_color'=>'#757575',
         ]);
     }
 }
