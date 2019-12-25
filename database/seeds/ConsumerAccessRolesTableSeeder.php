@@ -53,6 +53,30 @@ class ConsumerAccessRolesTableSeeder extends Seeder
             'main_l' => true,
         ]);
 
+        /**/
+        \App\Models\ConsumerAccessRole::create([
+            'id' => 6,
+            'access_role_id' => 5,
+            'consumer_id' => 3,
+            'main_l' => true,
+        ]);
+
+        /**/
+        \App\Models\ConsumerAccessRole::create([
+            'id' => 7,
+            'access_role_id' => 5,
+            'consumer_id' => 4,
+            'main_l' => true,
+        ]);
+
+        /**/
+        \App\Models\ConsumerAccessRole::create([
+            'id' => 8,
+            'access_role_id' => 6,
+            'consumer_id' => 3,
+            'main_l' => true,
+        ]);
+
         if (config("database.default") == "pgsql")
             \Illuminate\Support\Facades\DB::statement("SELECT setval('\"public\".\"_ConsumerAccessRoles_id_seq\"', 2000, true)");
 

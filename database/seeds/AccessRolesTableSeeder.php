@@ -25,14 +25,14 @@ class AccessRolesTableSeeder extends Seeder
         \App\Models\AccessRole::create([
             'id' => 2,
             'interface_id' => 2,
-            'access_role_code' => 'Test',
+            'access_role_code' => 'Miniyar',
             'access_role_name' => 'Минияр',
         ]);
 
         /**/
         \App\Models\AccessRole::create([
             'id' => 3,
-            'interface_id' => 3,
+            'interface_id' => 2,
             'access_role_code' => 'AlexMiniyar',
             'access_role_name' => 'Саша и Минияр',
         ]);
@@ -43,6 +43,22 @@ class AccessRolesTableSeeder extends Seeder
             'interface_id' => 4,
             'access_role_code' => 'Dima',
             'access_role_name' => 'Дима',
+        ]);
+
+        /**/
+        \App\Models\AccessRole::create([
+            'id' => 5,
+            'interface_id' => 5,
+            'access_role_code' => 'AlexDima',
+            'access_role_name' => 'Саша и Дима',
+        ]);
+
+        /**/
+        \App\Models\AccessRole::create([
+            'id' => 6,
+            'interface_id' => 3,
+            'access_role_code' => 'Alex',
+            'access_role_name' => 'Саша',
         ]);
 
         if (config("database.default") == "pgsql")

@@ -24,9 +24,9 @@ class InterfacesTableSeeder extends Seeder
         /**/
         \App\Models\UInterface::create([
             'id' => 2,
-            'menu_item_id' => 2,
-            'interface_code' => 'Miniyar',
-            'interface_name' => 'Минияр',
+            'menu_item_id' => 1,
+            'interface_code' => 'AlexMiniyar',
+            'interface_name' => 'Саша и Минияр',
         ]);
 
         /**/
@@ -43,6 +43,14 @@ class InterfacesTableSeeder extends Seeder
             'menu_item_id' => 1,
             'interface_code' => 'Dima',
             'interface_name' => 'Дима',
+        ]);
+
+        /**/
+        \App\Models\UInterface::create([
+            'id' => 5,
+            'menu_item_id' => 1,
+            'interface_code' => 'AlexDima',
+            'interface_name' => 'Саша и Дима',
         ]);
 
         if (config("database.default") == "pgsql")
