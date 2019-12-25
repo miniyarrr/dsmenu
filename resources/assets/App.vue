@@ -62,7 +62,7 @@
             },
             async interfaceChanged(e) {
                 var menu = await axios.post('/menu', {
-                    interface_id: e.interface_id
+                    interface_id: +e.interface_id
                 });
                 console.log(menu.data);
                 this.menu = menu.data.items
