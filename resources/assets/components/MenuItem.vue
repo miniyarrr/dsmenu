@@ -3,7 +3,7 @@
 
         <div class="menu-item-header" @click="expandChildren(item)">
             <h2 >
-                <router-link :style="{'color':menu_text_color}" :to="item.link">
+                <router-link :style="{'color':menu_text_color}" :to="item.url">
                     {{item.title}}
                 </router-link>
             </h2>
