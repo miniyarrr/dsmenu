@@ -26,15 +26,11 @@ class MenuItemsController extends Controller
         $params = [
             'check_access' => false,
             'convert_to_list' => true,
-            'indentation' => [
-                'indent' => 10
-            ],
             'fields_list' => [
                 'id',
                 'menu_item_code',
                 'title',
                 'line_n',
-                'padding',
                 'url'
             ],
         ];

@@ -217,7 +217,7 @@ class MenuManager
         return $item;
     }
 
-    private function checkMenuItemAccess($menuItem, $accessRoles, $return_as_list = true){
+    private function checkMenuItemAccess($menuItem, $accessRoles){
         $menu_item_view_l = false;
         $parent = $menuItem['menu_item_parent_id'] == null ? null : self::$menuItemTable[$menuItem['menu_item_parent_id']];
         foreach ($accessRoles as $access_role_key => $access_role_value) {
